@@ -13,6 +13,18 @@
 		6043510315790BC600FEC968 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6043510115790BC600FEC968 /* InfoPlist.strings */; };
 		6043510515790BC600FEC968 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043510415790BC600FEC968 /* main.m */; };
 		6043510915790BC600FEC968 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043510815790BC600FEC968 /* AppDelegate.m */; };
+		6043511515790D0600FEC968 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043511115790D0600FEC968 /* HTMLNode.m */; };
+		6043511615790D0600FEC968 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043511315790D0600FEC968 /* HTMLParser.m */; };
+		6043511715790D0600FEC968 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6043511415790D0600FEC968 /* README.md */; };
+		6043512015790D4600FEC968 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6043511F15790D4600FEC968 /* libxml2.dylib */; };
+		6043512615790E5400FEC968 /* SSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043512515790E5400FEC968 /* SSettings.m */; };
+		604351311579100000FEC968 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 604351301579100000FEC968 /* Util.m */; };
+		604351341579104E00FEC968 /* SUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 604351331579104E00FEC968 /* SUtil.m */; };
+		604351371579154900FEC968 /* SDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 604351361579154900FEC968 /* SDataManager.m */; };
+		6043513A1579171300FEC968 /* D3ServerStatusLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 604351391579171300FEC968 /* D3ServerStatusLoader.m */; };
+		6043513D15791B3000FEC968 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6043513C15791B3000FEC968 /* QuartzCore.framework */; };
+		6043513F15791BCB00FEC968 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6043513E15791BCA00FEC968 /* CoreLocation.framework */; };
+		6043514215791C3500FEC968 /* D3Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043514115791C3500FEC968 /* D3Server.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +36,28 @@
 		6043510215790BC600FEC968 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6043510415790BC600FEC968 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6043510615790BC600FEC968 /* D3Checker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "D3Checker-Prefix.pch"; sourceTree = "<group>"; };
-		6043510715790BC600FEC968 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		6043510815790BC600FEC968 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6043510715790BC600FEC968 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
+		6043510815790BC600FEC968 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
+		6043511015790D0600FEC968 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
+		6043511115790D0600FEC968 /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
+		6043511215790D0600FEC968 /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
+		6043511315790D0600FEC968 /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
+		6043511415790D0600FEC968 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		6043511F15790D4600FEC968 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		6043512415790E5400FEC968 /* SSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSettings.h; sourceTree = "<group>"; };
+		6043512515790E5400FEC968 /* SSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSettings.m; sourceTree = "<group>"; };
+		6043512F1579100000FEC968 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		604351301579100000FEC968 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		604351321579104E00FEC968 /* SUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUtil.h; sourceTree = "<group>"; };
+		604351331579104E00FEC968 /* SUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUtil.m; sourceTree = "<group>"; };
+		604351351579154900FEC968 /* SDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataManager.h; sourceTree = "<group>"; };
+		604351361579154900FEC968 /* SDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDataManager.m; sourceTree = "<group>"; };
+		604351381579171300FEC968 /* D3ServerStatusLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ServerStatusLoader.h; sourceTree = "<group>"; };
+		604351391579171300FEC968 /* D3ServerStatusLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ServerStatusLoader.m; sourceTree = "<group>"; };
+		6043513C15791B3000FEC968 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6043513E15791BCA00FEC968 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6043514015791C3500FEC968 /* D3Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = D3Server.h; path = ../../../../DiabloNetCheckerParserTest/DiabloNetCheckerParserTest/D3Server.h; sourceTree = "<group>"; };
+		6043514115791C3500FEC968 /* D3Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = D3Server.m; path = ../../../../DiabloNetCheckerParserTest/DiabloNetCheckerParserTest/D3Server.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +65,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6043513F15791BCB00FEC968 /* CoreLocation.framework in Frameworks */,
+				6043513D15791B3000FEC968 /* QuartzCore.framework in Frameworks */,
+				6043512015790D4600FEC968 /* libxml2.dylib in Frameworks */,
 				604350F915790BC600FEC968 /* UIKit.framework in Frameworks */,
 				604350FB15790BC600FEC968 /* Foundation.framework in Frameworks */,
 				604350FD15790BC600FEC968 /* CoreGraphics.framework in Frameworks */,
@@ -62,6 +97,9 @@
 		604350F715790BC600FEC968 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6043510F15790D0600FEC968 /* HTMLParser */,
+				6043513E15791BCA00FEC968 /* CoreLocation.framework */,
+				6043513C15791B3000FEC968 /* QuartzCore.framework */,
 				604350F815790BC600FEC968 /* UIKit.framework */,
 				604350FA15790BC600FEC968 /* Foundation.framework */,
 				604350FC15790BC600FEC968 /* CoreGraphics.framework */,
@@ -72,8 +110,8 @@
 		604350FE15790BC600FEC968 /* D3Checker */ = {
 			isa = PBXGroup;
 			children = (
-				6043510715790BC600FEC968 /* AppDelegate.h */,
-				6043510815790BC600FEC968 /* AppDelegate.m */,
+				6043511815790D1D00FEC968 /* Classes */,
+				6043511D15790D1D00FEC968 /* Resource */,
 				604350FF15790BC600FEC968 /* Supporting Files */,
 			);
 			path = D3Checker;
@@ -88,6 +126,96 @@
 				6043510615790BC600FEC968 /* D3Checker-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6043510F15790D0600FEC968 /* HTMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				6043511F15790D4600FEC968 /* libxml2.dylib */,
+				6043511015790D0600FEC968 /* HTMLNode.h */,
+				6043511115790D0600FEC968 /* HTMLNode.m */,
+				6043511215790D0600FEC968 /* HTMLParser.h */,
+				6043511315790D0600FEC968 /* HTMLParser.m */,
+				6043511415790D0600FEC968 /* README.md */,
+			);
+			name = HTMLParser;
+			path = D3Checker/Framework/HTMLParser;
+			sourceTree = "<group>";
+		};
+		6043511815790D1D00FEC968 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6043511915790D1D00FEC968 /* Common */,
+				6043511A15790D1D00FEC968 /* Controller */,
+				6043511B15790D1D00FEC968 /* Model */,
+				6043511C15790D1D00FEC968 /* View */,
+				6043512315790DCE00FEC968 /* Network */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6043511915790D1D00FEC968 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6043512F1579100000FEC968 /* Util.h */,
+				604351301579100000FEC968 /* Util.m */,
+				604351321579104E00FEC968 /* SUtil.h */,
+				604351331579104E00FEC968 /* SUtil.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		6043511A15790D1D00FEC968 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6043510715790BC600FEC968 /* AppDelegate.h */,
+				6043510815790BC600FEC968 /* AppDelegate.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6043511B15790D1D00FEC968 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6043514015791C3500FEC968 /* D3Server.h */,
+				6043514115791C3500FEC968 /* D3Server.m */,
+				6043512415790E5400FEC968 /* SSettings.h */,
+				6043512515790E5400FEC968 /* SSettings.m */,
+				604351351579154900FEC968 /* SDataManager.h */,
+				604351361579154900FEC968 /* SDataManager.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6043511C15790D1D00FEC968 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6043511D15790D1D00FEC968 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				6043511E15790D1D00FEC968 /* Image */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		6043511E15790D1D00FEC968 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		6043512315790DCE00FEC968 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				604351381579171300FEC968 /* D3ServerStatusLoader.h */,
+				604351391579171300FEC968 /* D3ServerStatusLoader.m */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6043510315790BC600FEC968 /* InfoPlist.strings in Resources */,
+				6043511715790D0600FEC968 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +283,14 @@
 			files = (
 				6043510515790BC600FEC968 /* main.m in Sources */,
 				6043510915790BC600FEC968 /* AppDelegate.m in Sources */,
+				6043511515790D0600FEC968 /* HTMLNode.m in Sources */,
+				6043511615790D0600FEC968 /* HTMLParser.m in Sources */,
+				6043512615790E5400FEC968 /* SSettings.m in Sources */,
+				604351311579100000FEC968 /* Util.m in Sources */,
+				604351341579104E00FEC968 /* SUtil.m in Sources */,
+				604351371579154900FEC968 /* SDataManager.m in Sources */,
+				6043513A1579171300FEC968 /* D3ServerStatusLoader.m in Sources */,
+				6043514215791C3500FEC968 /* D3Server.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +327,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 			};
@@ -207,6 +345,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -236,6 +375,37 @@
 			};
 			name = Release;
 		};
+		6043512115790D9200FEC968 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Adhoc;
+		};
+		6043512215790D9200FEC968 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "D3Checker/D3Checker-Prefix.pch";
+				INFOPLIST_FILE = "D3Checker/D3Checker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Adhoc;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -244,6 +414,7 @@
 			buildConfigurations = (
 				6043510A15790BC600FEC968 /* Debug */,
 				6043510B15790BC600FEC968 /* Release */,
+				6043512115790D9200FEC968 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -253,6 +424,7 @@
 			buildConfigurations = (
 				6043510D15790BC600FEC968 /* Debug */,
 				6043510E15790BC600FEC968 /* Release */,
+				6043512215790D9200FEC968 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
