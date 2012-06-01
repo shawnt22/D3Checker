@@ -20,11 +20,11 @@
 		604350F815790BC600FEC968 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		604350FA15790BC600FEC968 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		604350FC15790BC600FEC968 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		6043510015790BC600FEC968 /* D3Checker-Info.plist */ = {isa = PBXFileReference; path = "D3Checker-Info.plist"; sourceTree = "<group>"; };
+		6043510015790BC600FEC968 /* D3Checker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "D3Checker-Info.plist"; sourceTree = "<group>"; };
 		6043510215790BC600FEC968 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6043510415790BC600FEC968 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6043510615790BC600FEC968 /* D3Checker-Prefix.pch */ = {isa = PBXFileReference; path = "D3Checker-Prefix.pch"; sourceTree = "<group>"; };
-		6043510715790BC600FEC968 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		6043510615790BC600FEC968 /* D3Checker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "D3Checker-Prefix.pch"; sourceTree = "<group>"; };
+		6043510715790BC600FEC968 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6043510815790BC600FEC968 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +117,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = Sohu.com;
+				ORGANIZATIONNAME = "shawnt22@gmail.com ";
 			};
 			buildConfigurationList = 604350EE15790BC600FEC968 /* Build configuration list for PBXProject "D3Checker" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -190,7 +190,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -207,7 +207,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
