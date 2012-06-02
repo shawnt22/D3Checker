@@ -33,4 +33,14 @@ SDataManager *_instance = nil;
     return _instance;
 }
 
+#pragma mark prepare
+- (void)prepareData {
+    [Util createDirectoryIfNecessaryAtPath:[SUtil pathGlobalConfiger]];
+    
+    SSettings *_settings = [SSettings resumeSettings];
+    if (_settings) {
+        self.settings = _settings;
+    }
+}
+
 @end

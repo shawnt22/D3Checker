@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "D3ServerStatusLoader.h"
+#import "D3SettingsViewController.h"
+#import "D3ServerStatusViewController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, D3LoaderDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) UITabBarController *tabBarController;
+@property (nonatomic, assign) D3SettingsViewController *settingsViewController;
+@property (nonatomic, assign) D3ServerStatusViewController *serverStatusViewController;
+
++ (D3ServerStatusViewController *)d3ServerStatusViewController;
++ (D3SettingsViewController *)d3SettingsViewController;
 
 @end

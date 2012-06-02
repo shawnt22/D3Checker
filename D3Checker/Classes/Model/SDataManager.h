@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "SSettings.h"
+#import "Util.h"
+#import "SUtil.h"
 
 @interface SDataManager : NSObject
 @property (nonatomic, retain) SSettings *settings;
 
 + (SDataManager *)shareInstance;
+- (void)prepareData;
 
 @end

@@ -23,7 +23,7 @@
 @protocol D3LoaderProtocol <NSObject>
 @optional
 - (id)initWithDelegate:(id<D3LoaderDelegate>)delegate;
-- (BOOL)parserResponse:(id)response withD3Loader:(D3Loader *)d3loader;
+- (NSError *)parserResponse:(id)response withD3Loader:(D3Loader *)d3loader;
 - (void)cancelAllRequests;
 
 - (void)notifyD3loaderDidFinishLoadWith:(D3Loader *)d3loader;

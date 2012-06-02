@@ -25,6 +25,11 @@
 		6043513D15791B3000FEC968 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6043513C15791B3000FEC968 /* QuartzCore.framework */; };
 		6043513F15791BCB00FEC968 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6043513E15791BCA00FEC968 /* CoreLocation.framework */; };
 		6043514215791C3500FEC968 /* D3Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043514115791C3500FEC968 /* D3Server.m */; };
+		60F72F7D1579C73B008EE97C /* D3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F7C1579C73B008EE97C /* D3ViewController.m */; };
+		60F72F811579C75F008EE97C /* D3ServerStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F801579C75F008EE97C /* D3ServerStatusViewController.m */; };
+		60F72F841579C782008EE97C /* D3SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F831579C782008EE97C /* D3SettingsViewController.m */; };
+		60F72F961579CD80008EE97C /* D3CustomBGCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F951579CD80008EE97C /* D3CustomBGCell.m */; };
+		60F72F991579CDEB008EE97C /* D3TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F981579CDEB008EE97C /* D3TableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +63,16 @@
 		6043513E15791BCA00FEC968 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6043514015791C3500FEC968 /* D3Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = D3Server.h; path = ../../../../DiabloNetCheckerParserTest/DiabloNetCheckerParserTest/D3Server.h; sourceTree = "<group>"; };
 		6043514115791C3500FEC968 /* D3Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = D3Server.m; path = ../../../../DiabloNetCheckerParserTest/DiabloNetCheckerParserTest/D3Server.m; sourceTree = "<group>"; };
+		60F72F7B1579C73B008EE97C /* D3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ViewController.h; sourceTree = "<group>"; };
+		60F72F7C1579C73B008EE97C /* D3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ViewController.m; sourceTree = "<group>"; };
+		60F72F7F1579C75F008EE97C /* D3ServerStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ServerStatusViewController.h; sourceTree = "<group>"; };
+		60F72F801579C75F008EE97C /* D3ServerStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ServerStatusViewController.m; sourceTree = "<group>"; };
+		60F72F821579C782008EE97C /* D3SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3SettingsViewController.h; sourceTree = "<group>"; };
+		60F72F831579C782008EE97C /* D3SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3SettingsViewController.m; sourceTree = "<group>"; };
+		60F72F941579CD80008EE97C /* D3CustomBGCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3CustomBGCell.h; sourceTree = "<group>"; };
+		60F72F951579CD80008EE97C /* D3CustomBGCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3CustomBGCell.m; sourceTree = "<group>"; };
+		60F72F971579CDEB008EE97C /* D3TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3TableView.h; sourceTree = "<group>"; };
+		60F72F981579CDEB008EE97C /* D3TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3TableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +183,9 @@
 		6043511A15790D1D00FEC968 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6043510715790BC600FEC968 /* AppDelegate.h */,
-				6043510815790BC600FEC968 /* AppDelegate.m */,
+				60F72F871579C797008EE97C /* ServerStatus */,
+				60F72F861579C790008EE97C /* Settings */,
+				60F72F851579C78B008EE97C /* Base */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,6 +206,10 @@
 		6043511C15790D1D00FEC968 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				60F72F941579CD80008EE97C /* D3CustomBGCell.h */,
+				60F72F951579CD80008EE97C /* D3CustomBGCell.m */,
+				60F72F971579CDEB008EE97C /* D3TableView.h */,
+				60F72F981579CDEB008EE97C /* D3TableView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,6 +236,35 @@
 				604351391579171300FEC968 /* D3ServerStatusLoader.m */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		60F72F851579C78B008EE97C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				6043510715790BC600FEC968 /* AppDelegate.h */,
+				6043510815790BC600FEC968 /* AppDelegate.m */,
+				60F72F7B1579C73B008EE97C /* D3ViewController.h */,
+				60F72F7C1579C73B008EE97C /* D3ViewController.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		60F72F861579C790008EE97C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				60F72F821579C782008EE97C /* D3SettingsViewController.h */,
+				60F72F831579C782008EE97C /* D3SettingsViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		60F72F871579C797008EE97C /* ServerStatus */ = {
+			isa = PBXGroup;
+			children = (
+				60F72F7F1579C75F008EE97C /* D3ServerStatusViewController.h */,
+				60F72F801579C75F008EE97C /* D3ServerStatusViewController.m */,
+			);
+			name = ServerStatus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +340,11 @@
 				604351371579154900FEC968 /* SDataManager.m in Sources */,
 				6043513A1579171300FEC968 /* D3ServerStatusLoader.m in Sources */,
 				6043514215791C3500FEC968 /* D3Server.m in Sources */,
+				60F72F7D1579C73B008EE97C /* D3ViewController.m in Sources */,
+				60F72F811579C75F008EE97C /* D3ServerStatusViewController.m in Sources */,
+				60F72F841579C782008EE97C /* D3SettingsViewController.m in Sources */,
+				60F72F961579CD80008EE97C /* D3CustomBGCell.m in Sources */,
+				60F72F991579CDEB008EE97C /* D3TableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +367,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -329,6 +384,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -338,7 +394,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -348,6 +405,8 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -380,7 +439,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SONGSONG TENG";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SONGSONG TENG";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -390,6 +450,8 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "135B2880-0A42-4F4D-87D4-FC5B5C1DA5FC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "135B2880-0A42-4F4D-87D4-FC5B5C1DA5FC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -427,6 +489,7 @@
 				6043512215790D9200FEC968 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

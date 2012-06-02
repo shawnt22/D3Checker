@@ -8,12 +8,18 @@
 
 #import "AppDelegate.h"
 
+@interface AppDelegate()
+- (void)launchViewControllers;
+@end
+
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize tabBarController, settingsViewController, serverStatusViewController;
 
 - (void)dealloc
 {
+    self.tabBarController = nil;
     [_window release];
     [super dealloc];
 }
@@ -25,20 +31,52 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    D3ServerStatusLoader *loader = [[D3ServerStatusLoader alloc] initWithDelegate:self];
-    [loader checkD3ServerStatus];
-    
+    [[SDataManager shareInstance] prepareData];
+    [self launchViewControllers];
     
     return YES;
 }
++ (D3ServerStatusViewController *)d3ServerStatusViewController {
+    AppDelegate *_appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    return _appDelegate.serverStatusViewController;
+}
++ (D3SettingsViewController *)d3SettingsViewController {
+    AppDelegate *_appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    return _appDelegate.settingsViewController;
+}
 
-- (void)d3loaderDidFinishLoadWith:(D3Loader *)d3loader {
-    NSLog(@"success");
+- (void)launchViewControllers {
+    D3ServerStatusViewController *_serverStatusVctr = [[D3ServerStatusViewController alloc] init];
+    UINavigationController *_serverStatusNctr = [[UINavigationController alloc] initWithRootViewController:_serverStatusVctr];
+    self.serverStatusViewController = _serverStatusVctr;
+    [_serverStatusVctr release];
+    
+    D3SettingsViewController *_settingsVctr = [[D3SettingsViewController alloc] init];
+    UINavigationController *_settingsNctr = [[UINavigationController alloc] initWithRootViewController:_settingsVctr];
+    self.settingsViewController = _settingsVctr;
+    [_settingsVctr release];
+    
+    UITabBarController *_tabBarCtr = [[UITabBarController alloc] init];
+    _tabBarCtr.viewControllers = [NSArray arrayWithObjects:_serverStatusNctr, _settingsNctr, nil];
+    [_serverStatusNctr release];
+    [_settingsNctr release];
+    self.tabBarController = _tabBarCtr;
+    [_tabBarCtr release];
+    
+    [self.serverStatusViewController refreshBarItems];
+    [self.settingsViewController refreshBarItems];
+    
+    [self.window addSubview:self.tabBarController.view];
 }
-- (void)d3loaderDidFailLoadWith:(D3Loader *)d3loader Error:(NSError *)error {
-    NSLog(@"fail : %@", error);
-}
-- (void)d3loaderDidCancelLoadWith:(D3Loader *)d3loader {}
+
+
+
+
+
+
+
+
+
 
 
 

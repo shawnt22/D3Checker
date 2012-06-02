@@ -62,13 +62,23 @@
     [super dealloc];
 }
 - (void)checkD3ServerStatus {
-    [self.connection cancel];
+//    [self.connection cancel];
+//    
+//    NSURLRequest *_request = [NSURLRequest requestWithURL:[NSURL URLWithString:[SUtil checkD3ServerStatus]]];
+//    NSURLConnection *_connection = [NSURLConnection connectionWithRequest:_request delegate:self];
+//    self.connection = _connection;
+//    
+//    [self.connection start];
     
-    NSURLRequest *_request = [NSURLRequest requestWithURL:[NSURL URLWithString:[SUtil checkD3ServerStatus]]];
-    NSURLConnection *_connection = [NSURLConnection connectionWithRequest:_request delegate:self];
-    self.connection = _connection;
-    
-    [self.connection start];
+    NSData *_data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[SUtil checkD3ServerStatus]]];
+    NSString *_string = [[NSString alloc] initWithData:_data encoding:NSUTF8StringEncoding];
+    NSError *_error = [self parserResponse:_string withD3Loader:self];
+    if (_error) {
+        [self notifyD3loaderDidFailLoadWith:self Error:[SUtil errorWithCode:D3ErrorParserFail]];
+    } else {
+        [self notifyD3loaderDidFinishLoadWith:self];
+    }
+    [_string release];
 }
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSError *_d3error = [SUtil errorWithCode:[error code]];
@@ -89,14 +99,14 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     [self notifyD3loaderDidFinishLoadWith:self];
 }
-- (BOOL)parserResponse:(id)response withD3Loader:(D3Loader *)d3loader {
+- (NSError *)parserResponse:(id)response withD3Loader:(D3Loader *)d3loader {
     NSError *error = nil;
     NSString *html = (NSString *)response;
     HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
     
     if (error) {
         [parser release];
-         return NO;
+         return error;
     }
     
     HTMLNode *bodyNode = [parser body];
@@ -126,7 +136,7 @@
     
     [parser release];
     
-    return YES;
+    return nil;
 }
 
 @end
