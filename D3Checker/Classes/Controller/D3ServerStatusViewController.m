@@ -7,7 +7,7 @@
 //
 
 #import "D3ServerStatusViewController.h"
-#import "D3CustomBGCell.h"
+#import "D3ServerStatusCell.h"
 
 @interface D3ServerStatusViewController ()
 @property (nonatomic, assign) D3TableView *theTableView;
@@ -72,8 +72,6 @@
 
 #pragma mark loader
 - (void)d3loaderDidFinishLoadWith:(D3Loader *)d3loader {
-    D3ServerStatusLoader *_ld = self.loader;
-    NSLog(@"%d", [_ld.serverStatuses count]);
     [self.theTableView reloadData];
 }
 - (void)d3loaderDidFailLoadWith:(D3Loader *)d3loader Error:(NSError *)error {
@@ -86,10 +84,10 @@
     UIColor *_color = [UIColor blackColor];
     switch (server.serverType) {
         case D3ItemServerGame:
-            _color = SRGBCOLOR(1, 1, 1);
+            _color = SRGBCOLOR(124, 84, 43);
             break;
         case D3ItemServerStore:
-            _color = SRGBCOLOR(243, 54, 66);
+            _color = SRGBCOLOR(125, 84, 43);
             break;    
         default:
             break;
@@ -97,24 +95,25 @@
     return _color;
 }
 - (UIColor *)statusColorWithServer:(D3ItemServer *)server {
-    UIColor *_color = [UIColor blackColor];
-    switch (server.serverType) {
-        case D3ItemServerGame:
-            _color = SRGBCOLOR(1, 1, 1);
+    UIColor *_color = nil;
+    switch (server.statusType) {
+        case D3ItemServerStatusAvailable:
+            _color = SRGBCOLOR(107, 162, 0);
             break;
-        case D3ItemServerStore:
-            _color = SRGBCOLOR(243, 54, 66);
+        case D3ItemServerStatusMaintenance:
+            _color = SRGBCOLOR(190, 69, 35);
             break;    
         default:
+            _color = SRGBCOLOR(107, 162, 0);
             break;
     }
     return _color;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *_identifier = @"d3cell";
-    TCustomBGCell *cell = (TCustomBGCell *)[tableView dequeueReusableCellWithIdentifier:_identifier];
+    D3ServerStatusCell *cell = (D3ServerStatusCell *)[tableView dequeueReusableCellWithIdentifier:_identifier];
     if (!cell) {
-        cell = [[[TCustomBGCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:_identifier] autorelease];
+        cell = [[[D3ServerStatusCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:_identifier] autorelease];
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
@@ -126,21 +125,47 @@
         cell.customBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:_count];
         cell.customSelectedBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:_count];
         
-        cell.textLabel.textColor = [self titleColorWithServer:_server];
-        cell.detailTextLabel.textColor = [self statusColorWithServer:_server];
+        cell.lblTitle.textColor = [self titleColorWithServer:_server];
+        cell.lblStatus.textColor = [self statusColorWithServer:_server];
         
-        cell.textLabel.text = _server.title;
-        cell.detailTextLabel.text = _server.status;
+        cell.lblTitle.text = _server.title;
+        cell.lblStatus.text = _server.status;
     } else {
         cell.customBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:1];
         cell.customSelectedBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:1];
         
-        cell.textLabel.textColor = SRGBCOLOR(0, 0, 0);
-        cell.textLabel.text = @"No Data";
-        cell.detailTextLabel.text = nil;
+        cell.lblTitle.textColor = SRGBCOLOR(0, 0, 0);
+        cell.lblTitle.text = @"No Data";
+        cell.lblStatus.text = nil;
     }
     
     return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [D3ServerStatusCell cellHeight];
+}
+#define kStatusTableSectionHeaderViewHeight   50.0
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return kStatusTableSectionHeaderViewHeight;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *_headerBG = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+    _headerBG.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+    _headerBG.backgroundColor = [UIColor clearColor];
+    
+    UILabel *_category = [[UILabel alloc] initWithFrame:CGRectMake(25, 0, 270, kStatusTableSectionHeaderViewHeight)];
+    _category.backgroundColor = [UIColor clearColor];
+    _category.font = [UIFont boldSystemFontOfSize:20];
+    _category.textColor = SRGBCOLOR(238, 224, 196);
+    [_headerBG addSubview:_category];
+    [_category release];
+    
+    if ([self.loader.serverStatuses count] > 0) {
+        D3CategoryServer *_cs = [self.loader.serverStatuses objectAtIndex:section];
+        _category.text = _cs.title;
+    }
+    
+    return _headerBG;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if ([self.loader.serverStatuses count] > 0) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		601934851579FA0500257D1D /* D3ServerStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 601934841579FA0500257D1D /* D3ServerStatusCell.m */; };
 		604350F915790BC600FEC968 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604350F815790BC600FEC968 /* UIKit.framework */; };
 		604350FB15790BC600FEC968 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604350FA15790BC600FEC968 /* Foundation.framework */; };
 		604350FD15790BC600FEC968 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604350FC15790BC600FEC968 /* CoreGraphics.framework */; };
@@ -33,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		601934831579FA0500257D1D /* D3ServerStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ServerStatusCell.h; sourceTree = "<group>"; };
+		601934841579FA0500257D1D /* D3ServerStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ServerStatusCell.m; sourceTree = "<group>"; };
 		604350F415790BC600FEC968 /* D3Checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D3Checker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		604350F815790BC600FEC968 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		604350FA15790BC600FEC968 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,7 +58,7 @@
 		604351301579100000FEC968 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		604351321579104E00FEC968 /* SUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUtil.h; sourceTree = "<group>"; };
 		604351331579104E00FEC968 /* SUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUtil.m; sourceTree = "<group>"; };
-		604351351579154900FEC968 /* D3DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; path = D3DataManager.h; sourceTree = "<group>"; };
+		604351351579154900FEC968 /* D3DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3DataManager.h; sourceTree = "<group>"; };
 		604351361579154900FEC968 /* D3DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3DataManager.m; sourceTree = "<group>"; };
 		604351381579171300FEC968 /* D3ServerStatusLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ServerStatusLoader.h; sourceTree = "<group>"; };
 		604351391579171300FEC968 /* D3ServerStatusLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ServerStatusLoader.m; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 				60F72F951579CD80008EE97C /* D3CustomBGCell.m */,
 				60F72F971579CDEB008EE97C /* D3TableView.h */,
 				60F72F981579CDEB008EE97C /* D3TableView.m */,
+				601934831579FA0500257D1D /* D3ServerStatusCell.h */,
+				601934841579FA0500257D1D /* D3ServerStatusCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				60F72F841579C782008EE97C /* D3SettingsViewController.m in Sources */,
 				60F72F961579CD80008EE97C /* D3CustomBGCell.m in Sources */,
 				60F72F991579CDEB008EE97C /* D3TableView.m in Sources */,
+				601934851579FA0500257D1D /* D3ServerStatusCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

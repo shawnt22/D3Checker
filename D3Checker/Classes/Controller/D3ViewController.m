@@ -25,6 +25,7 @@
 #pragma mark controller delegate
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = SRGBCOLOR(68, 72, 53);
 }
 - (void)viewDidUnload {
     [super viewDidUnload];
