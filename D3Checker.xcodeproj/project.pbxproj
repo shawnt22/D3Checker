@@ -20,7 +20,7 @@
 		6043512615790E5400FEC968 /* SSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043512515790E5400FEC968 /* SSettings.m */; };
 		604351311579100000FEC968 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 604351301579100000FEC968 /* Util.m */; };
 		604351341579104E00FEC968 /* SUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 604351331579104E00FEC968 /* SUtil.m */; };
-		604351371579154900FEC968 /* SDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 604351361579154900FEC968 /* SDataManager.m */; };
+		604351371579154900FEC968 /* D3DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 604351361579154900FEC968 /* D3DataManager.m */; };
 		6043513A1579171300FEC968 /* D3ServerStatusLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 604351391579171300FEC968 /* D3ServerStatusLoader.m */; };
 		6043513D15791B3000FEC968 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6043513C15791B3000FEC968 /* QuartzCore.framework */; };
 		6043513F15791BCB00FEC968 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6043513E15791BCA00FEC968 /* CoreLocation.framework */; };
@@ -55,8 +55,8 @@
 		604351301579100000FEC968 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		604351321579104E00FEC968 /* SUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUtil.h; sourceTree = "<group>"; };
 		604351331579104E00FEC968 /* SUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUtil.m; sourceTree = "<group>"; };
-		604351351579154900FEC968 /* SDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataManager.h; sourceTree = "<group>"; };
-		604351361579154900FEC968 /* SDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDataManager.m; sourceTree = "<group>"; };
+		604351351579154900FEC968 /* D3DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; path = D3DataManager.h; sourceTree = "<group>"; };
+		604351361579154900FEC968 /* D3DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3DataManager.m; sourceTree = "<group>"; };
 		604351381579171300FEC968 /* D3ServerStatusLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ServerStatusLoader.h; sourceTree = "<group>"; };
 		604351391579171300FEC968 /* D3ServerStatusLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ServerStatusLoader.m; sourceTree = "<group>"; };
 		6043513C15791B3000FEC968 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -197,8 +197,8 @@
 				6043514115791C3500FEC968 /* D3Server.m */,
 				6043512415790E5400FEC968 /* SSettings.h */,
 				6043512515790E5400FEC968 /* SSettings.m */,
-				604351351579154900FEC968 /* SDataManager.h */,
-				604351361579154900FEC968 /* SDataManager.m */,
+				604351351579154900FEC968 /* D3DataManager.h */,
+				604351361579154900FEC968 /* D3DataManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,7 +337,7 @@
 				6043512615790E5400FEC968 /* SSettings.m in Sources */,
 				604351311579100000FEC968 /* Util.m in Sources */,
 				604351341579104E00FEC968 /* SUtil.m in Sources */,
-				604351371579154900FEC968 /* SDataManager.m in Sources */,
+				604351371579154900FEC968 /* D3DataManager.m in Sources */,
 				6043513A1579171300FEC968 /* D3ServerStatusLoader.m in Sources */,
 				6043514215791C3500FEC968 /* D3Server.m in Sources */,
 				60F72F7D1579C73B008EE97C /* D3ViewController.m in Sources */,

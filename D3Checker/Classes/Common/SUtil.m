@@ -8,7 +8,7 @@
 
 #import "SUtil.h"
 #import "Util.h"
-#import "SDataManager.h"
+#import "D3DataManager.h"
 
 @implementation SUtil
 
@@ -20,7 +20,7 @@
 + (NSString *)checkD3ServerStatus {
     NSString *url = nil;
     
-    switch ([SDataManager shareInstance].settings.language) {
+    switch ([D3DataManager shareInstance].settings.language) {
         case D3SupportLanguageUS_EN:
         {
             url = @"http://us.battle.net/d3/en/status";
@@ -125,7 +125,7 @@
 }
 + (NSString *)defaultDescriptionWithErrorCode:(D3Error)code {
     NSString *_description = nil;
-    switch ([SDataManager shareInstance].settings.language) {
+    switch ([D3DataManager shareInstance].settings.language) {
         case D3SupportLanguageTW_ZH:
         {
             switch (code) {

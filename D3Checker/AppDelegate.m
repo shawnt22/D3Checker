@@ -31,7 +31,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    [[SDataManager shareInstance] prepareData];
+    [[D3DataManager shareInstance] prepareData];
     [self launchViewControllers];
     
     return YES;

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SDataManager.h"
+#import "D3DataManager.h"
 #import "SUtil.h"
 #import "Util.h"
 
