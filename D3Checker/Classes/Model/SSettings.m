@@ -16,7 +16,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self init];
     if (self) {
-        _language = (DSupportLanguage)[[aDecoder decodeObjectForKey:kSettingsLanguage] integerValue];
+        _language = (D3SupportLanguage)[[aDecoder decodeObjectForKey:kSettingsLanguage] integerValue];
     }
     return self;
 }
@@ -26,7 +26,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _language = DSupportLanguageEN;
+        _language = D3SupportLanguageUS_EN;
     }
     return self;
 }

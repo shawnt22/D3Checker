@@ -23,8 +23,8 @@
 #define kSettingsLanguage   @"language"
 @interface SSettings : NSObject<SSettingsProtocol, NSCoding> {
 @private
-    DSupportLanguage _language;
+    D3SupportLanguage _language;
 }
-@property (nonatomic, assign) DSupportLanguage language;
+@property (nonatomic, assign) D3SupportLanguage language;
 
 @end

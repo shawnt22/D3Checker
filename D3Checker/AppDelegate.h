@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "D3ServerStatusLoader.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, D3LoaderDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

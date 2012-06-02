@@ -24,8 +24,24 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    D3ServerStatusLoader *loader = [[D3ServerStatusLoader alloc] initWithDelegate:self];
+    [loader checkD3ServerStatus];
+    
+    
     return YES;
 }
+
+- (void)d3loaderDidFinishLoadWith:(D3Loader *)d3loader {
+    NSLog(@"success");
+}
+- (void)d3loaderDidFailLoadWith:(D3Loader *)d3loader Error:(NSError *)error {
+    NSLog(@"fail : %@", error);
+}
+- (void)d3loaderDidCancelLoadWith:(D3Loader *)d3loader {}
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
