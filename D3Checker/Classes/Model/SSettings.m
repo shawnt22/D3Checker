@@ -50,5 +50,86 @@
     return result;
 }
 
+#pragma mark Language
++ (NSString *)descriptionWithD3language:(D3SupportLanguage)d3language {
+    NSString *result = nil;
+    switch (d3language) {
+        case D3SupportLanguageUS_EN:
+        {
+            result = @"English (US)";
+        }
+            break;
+        case D3SupportLanguageUS_ES:
+        {
+            result = @"Español (AL)";
+        }
+            break;
+        case D3SupportLanguageUS_PT:
+        {
+            result = @"Português (AL)";
+        }
+            break;
+        case D3SupportLanguageEU_DE:
+        {
+            result = @"Deutsch";
+        }
+            break;
+        case D3SupportLanguageEU_EN:
+        {
+            result = @"English (EU)";
+        }
+            break;
+        case D3SupportLanguageEU_ES:
+        {
+            result = @"Español (EU)";
+        }
+            break;
+        case D3SupportLanguageEU_FR:
+        {
+            result = @"Français";
+        }
+            break;
+        case D3SupportLanguageEU_IT:
+        {
+            result = @"Italiano";
+        }
+            break;
+        case D3SupportLanguageEU_PL:
+        {
+            result = @"Polski";
+        }
+            break;
+        case D3SupportLanguageEU_PT:
+        {
+            result = @"Português (EU)";
+        }
+            break;
+        case D3SupportLanguageEU_RU:
+        {
+            result = @"Русский";
+        }
+            break;
+        case D3SupportLanguageKR_KO:
+        {
+            result = @"한국어";
+        }
+            break;
+        case D3SupportLanguageTW_ZH:
+        {
+            result = @"繁體中文";
+        }
+            break;
+        case D3SupportLanguageSEA_EN:
+        {
+            result = @"English (US)";
+        }
+            break;
+        default:
+            result = @"";
+            break;
+    }
+    return result;
+}
+
 
 @end

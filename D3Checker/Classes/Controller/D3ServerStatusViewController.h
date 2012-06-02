@@ -11,5 +11,6 @@
 #import "D3ServerStatusLoader.h"
 
 @interface D3ServerStatusViewController : D3ViewController <UITableViewDelegate, UITableViewDataSource, D3LoaderDelegate>
+@property (nonatomic, assign) BOOL needReloadStatus;
 
 @end

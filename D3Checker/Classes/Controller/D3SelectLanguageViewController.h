@@ -1,5 +1,5 @@
 //
-//  D3SettingsViewController.h
+//  D3SelectLanguageViewController.h
 //  D3Checker
 //
 //  Created by 松 滕 on 12-6-2.
@@ -9,6 +9,6 @@
 #import "D3ViewController.h"
 #import "D3TableView.h"
 
-@interface D3SettingsViewController : D3ViewController <UITableViewDelegate, UITableViewDataSource>
+@interface D3SelectLanguageViewController : D3ViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

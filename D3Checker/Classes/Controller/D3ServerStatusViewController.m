@@ -19,6 +19,7 @@
 @implementation D3ServerStatusViewController
 @synthesize theTableView;
 @synthesize loader;
+@synthesize needReloadStatus;
 
 #pragma mark init & dealloc
 - (id)init {
@@ -27,10 +28,15 @@
         D3ServerStatusLoader *_loader = [[D3ServerStatusLoader alloc] initWithDelegate:self];
         self.loader = _loader;
         [_loader release];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(responseNotification:) name:kD3NotificationSupportLanguageChanged object:nil];
+        
+        self.needReloadStatus = YES;
     }
     return self;
 }
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kD3NotificationSupportLanguageChanged object:nil];
     [self.loader cancelAllRequests];
     self.loader = nil;
     [super dealloc];
@@ -52,16 +58,26 @@
     [self.view addSubview:_tb];
     self.theTableView = _tb;
     [_tb release];
-    
-    [self refreshAction:nil];
 }
 - (void)viewDidUnload {
     [super viewDidUnload];
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (self.needReloadStatus) {
+        [self refreshAction:nil];
+        self.needReloadStatus = NO;
+    }
 }
 
 #pragma mark actions
 - (void)refreshAction:(id)sender {
     [self.loader checkD3ServerStatus];
+}
+- (void)responseNotification:(NSNotification *)notification {
+    if ([[notification name] isEqualToString:kD3NotificationSupportLanguageChanged]) {
+        self.needReloadStatus = YES;
+    }
 }
 
 #pragma mark refresh

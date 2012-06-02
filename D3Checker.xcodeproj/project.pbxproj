@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		601934851579FA0500257D1D /* D3ServerStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 601934841579FA0500257D1D /* D3ServerStatusCell.m */; };
+		6019348C157A0A8400257D1D /* D3SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6019348B157A0A8400257D1D /* D3SettingsCell.m */; };
+		60193493157A150B00257D1D /* D3SelectLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60193492157A150B00257D1D /* D3SelectLanguageViewController.m */; };
 		604350F915790BC600FEC968 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604350F815790BC600FEC968 /* UIKit.framework */; };
 		604350FB15790BC600FEC968 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604350FA15790BC600FEC968 /* Foundation.framework */; };
 		604350FD15790BC600FEC968 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604350FC15790BC600FEC968 /* CoreGraphics.framework */; };
@@ -36,6 +38,10 @@
 /* Begin PBXFileReference section */
 		601934831579FA0500257D1D /* D3ServerStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ServerStatusCell.h; sourceTree = "<group>"; };
 		601934841579FA0500257D1D /* D3ServerStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ServerStatusCell.m; sourceTree = "<group>"; };
+		6019348A157A0A8400257D1D /* D3SettingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3SettingsCell.h; sourceTree = "<group>"; };
+		6019348B157A0A8400257D1D /* D3SettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3SettingsCell.m; sourceTree = "<group>"; };
+		60193491157A150B00257D1D /* D3SelectLanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3SelectLanguageViewController.h; sourceTree = "<group>"; };
+		60193492157A150B00257D1D /* D3SelectLanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3SelectLanguageViewController.m; sourceTree = "<group>"; };
 		604350F415790BC600FEC968 /* D3Checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D3Checker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		604350F815790BC600FEC968 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		604350FA15790BC600FEC968 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -215,6 +221,8 @@
 				60F72F981579CDEB008EE97C /* D3TableView.m */,
 				601934831579FA0500257D1D /* D3ServerStatusCell.h */,
 				601934841579FA0500257D1D /* D3ServerStatusCell.m */,
+				6019348A157A0A8400257D1D /* D3SettingsCell.h */,
+				6019348B157A0A8400257D1D /* D3SettingsCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -259,6 +267,8 @@
 			children = (
 				60F72F821579C782008EE97C /* D3SettingsViewController.h */,
 				60F72F831579C782008EE97C /* D3SettingsViewController.m */,
+				60193491157A150B00257D1D /* D3SelectLanguageViewController.h */,
+				60193492157A150B00257D1D /* D3SelectLanguageViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -351,6 +361,8 @@
 				60F72F961579CD80008EE97C /* D3CustomBGCell.m in Sources */,
 				60F72F991579CDEB008EE97C /* D3TableView.m in Sources */,
 				601934851579FA0500257D1D /* D3ServerStatusCell.m in Sources */,
+				6019348C157A0A8400257D1D /* D3SettingsCell.m in Sources */,
+				60193493157A150B00257D1D /* D3SelectLanguageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

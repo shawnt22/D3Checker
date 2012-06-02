@@ -27,4 +27,6 @@
 }
 @property (nonatomic, assign) D3SupportLanguage language;
 
++ (NSString *)descriptionWithD3language:(D3SupportLanguage)d3language;
+
 @end

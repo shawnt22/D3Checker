@@ -11,7 +11,7 @@
 #pragma mark SupportLanguage
 typedef enum {
     //  America
-    D3SupportLanguageUS_EN,         
+    D3SupportLanguageUS_EN = 0,         
     D3SupportLanguageUS_ES,
     D3SupportLanguageUS_PT,
     //  Europe
@@ -27,10 +27,12 @@ typedef enum {
     D3SupportLanguageKR_KO,
     //  China
     D3SupportLanguageTW_ZH,
+    
+    D3SupportLanguageCount,
+    
     //  SouthEast Asia
     D3SupportLanguageSEA_EN,
     
-    D3SupportLanguageCount,
 }D3SupportLanguage;
 
 #pragma mark Common
