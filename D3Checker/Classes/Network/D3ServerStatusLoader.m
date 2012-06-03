@@ -86,7 +86,6 @@
         [self notifyD3loaderDidFailLoadWith:self Error:[SUtil errorWithCode:D3ErrorParserFail]];
     } else {
         [self notifyD3loaderDidFinishLoadWith:self];
-        NSLog(@"finish");
     }
     [_string release];
 }

@@ -12,6 +12,200 @@
 
 @implementation SUtil
 
++ (void)alertWithTitle:(NSString *)title Message:(NSString *)message {
+    UIAlertView *_alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [_alert show];
+    [_alert release];
+}
+
+@end
+
+#pragma mark - Message
+@implementation SUtil (Message)
+
++ (NSString *)messageOfServerStatusTableEmptyData {
+    NSString *_result = nil;
+    switch ([D3DataManager shareInstance].settings.language) {
+        case D3SupportLanguageTW_ZH:
+        {
+            _result = @"暫無數據";
+        }
+            break;  
+        case D3SupportLanguageKR_KO:
+        {
+            _result = @"데이터가 없습니다";
+        }
+            break; 
+        case D3SupportLanguageEU_FR:
+        {
+            _result = @"Pas de données";
+        }
+            break; 
+        default: 
+        {
+            _result = @"No Data";
+        }
+            break;
+    }
+    return _result;
+}
++ (NSString *)titleOfServerStatusViewController {
+    NSString *_result = nil;
+    switch ([D3DataManager shareInstance].settings.language) {
+        case D3SupportLanguageTW_ZH:
+        {
+            _result = @"伺服器狀態";
+        }
+            break;  
+        case D3SupportLanguageKR_KO:
+        {
+            _result = @"서버 현황";
+        }
+            break; 
+        case D3SupportLanguageEU_FR:
+        {
+            _result = @"Serveur";
+        }
+            break; 
+        default: 
+        {
+            _result = @"Server Status";
+        }
+            break;
+    }
+    return _result;
+}
++ (NSString *)titleOfSettingsViewController {
+    NSString *_result = nil;
+    switch ([D3DataManager shareInstance].settings.language) {
+        case D3SupportLanguageTW_ZH:
+        {
+            _result = @"設置";
+        }
+            break;  
+        case D3SupportLanguageKR_KO:
+        {
+            _result = @"설정";
+        }
+            break; 
+        case D3SupportLanguageEU_FR:
+        {
+            _result = @"Configuration";
+        }
+            break; 
+        default: 
+        {
+            _result = @"Settings";
+        }
+            break;
+    }
+    return _result;
+}
++ (NSString *)titleOfSelectLanguageViewController {
+    NSString *_result = nil;
+    switch ([D3DataManager shareInstance].settings.language) {
+        case D3SupportLanguageTW_ZH:
+        {
+            _result = @"選擇語言";
+        }
+            break;  
+        case D3SupportLanguageKR_KO:
+        {
+            _result = @"언어를 선택하십시오";
+        }
+            break; 
+        case D3SupportLanguageEU_FR:
+        {
+            _result = @"Sélectionnez Langue";
+        }
+            break; 
+        default: 
+        {
+            _result = @"Select Language";
+        }
+            break;
+    }
+    return _result;
+}
++ (NSString *)descriptionOfSettingsTableLanguage {
+    NSString *_result = nil;
+    switch ([D3DataManager shareInstance].settings.language) {
+        case D3SupportLanguageTW_ZH:
+        {
+            _result = @"語言";
+        }
+            break;  
+        case D3SupportLanguageKR_KO:
+        {
+            _result = @"언어";
+        }
+            break; 
+        case D3SupportLanguageEU_FR:
+        {
+            _result = @"Langue";
+        }
+            break; 
+        default: 
+        {
+            _result = @"Language";
+        }
+            break;
+    }
+    return _result;
+}
++ (NSString *)descriptionOfSettingsTableEmailMe {
+    NSString *_result = nil;
+    switch ([D3DataManager shareInstance].settings.language) {
+        case D3SupportLanguageTW_ZH:
+        {
+            _result = @"反饋";
+        }
+            break;  
+        case D3SupportLanguageKR_KO:
+        {
+            _result = @"피드백";
+        }
+            break; 
+        case D3SupportLanguageEU_FR:
+        {
+            _result = @"Réaction";
+        }
+            break; 
+        default: 
+        {
+            _result = @"Feedback";
+        }
+            break;
+    }
+    return _result;
+}
++ (NSString *)descriptionOfSettingsTableAboutMe {
+    NSString *_result = nil;
+    switch ([D3DataManager shareInstance].settings.language) {
+        case D3SupportLanguageTW_ZH:
+        {
+            _result = @"關於";
+        }
+            break;  
+        case D3SupportLanguageKR_KO:
+        {
+            _result = @"약";
+        }
+            break; 
+        case D3SupportLanguageEU_FR:
+        {
+            _result = @"sur";
+        }
+            break; 
+        default: 
+        {
+            _result = @"About";
+        }
+            break;
+    }
+    return _result;
+}
+
 @end
 
 #pragma mark - URLPath
@@ -125,39 +319,52 @@
 }
 + (NSString *)defaultDescriptionWithErrorCode:(D3Error)code {
     NSString *_description = nil;
-    switch ([D3DataManager shareInstance].settings.language) {
-        case D3SupportLanguageTW_ZH:
+    
+    switch (code) {
+        case D3ErrorParserFail:
         {
-            switch (code) {
-                case D3ErrorParserFail:
+            switch ([D3DataManager shareInstance].settings.language) {
+                case D3SupportLanguageTW_ZH:
                 {
                     _description = @"數據解析失敗";
                 }
-                    break;
-                case D3ErrorCanntConnect:
-                {
-                    _description = @"網絡連接失敗";
-                }
-                    break;
-                default:
-                    break;
-            }
-        }
-            break;    
-        default: 
-        {
-            switch (code) {
-                case D3ErrorParserFail:
+                    break; 
+                default: 
                 {
                     _description = @"Oops! Parser Failed.";
                 }
                     break;
-                case D3ErrorCanntConnect:
+            }
+        }
+            break;
+        case D3ErrorCanntConnect:
+        {
+            switch ([D3DataManager shareInstance].settings.language) {
+                case D3SupportLanguageTW_ZH:
+                {
+                    _description = @"網絡連接失敗";
+                }
+                    break;
+                default: 
                 {
                     _description = @"Oops! Can not connect to server.";
                 }
                     break;
-                default:
+            }
+        }
+            break;
+        default:
+        {
+            switch ([D3DataManager shareInstance].settings.language) {
+                case D3SupportLanguageTW_ZH:
+                {
+                    _description = @"出錯了";
+                }
+                    break;
+                default: 
+                {
+                    _description = @"Oops! Something with wrong.";
+                }
                     break;
             }
         }

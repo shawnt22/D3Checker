@@ -28,12 +28,11 @@
 - (id)init {
     self = [super init];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(responseNotification:) name:kD3NotificationSupportLanguageChanged object:nil];
+        
     }
     return self;
 }
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kD3NotificationSupportLanguageChanged object:nil];
     [super dealloc];
 }
 
@@ -61,21 +60,23 @@
 - (void)changeLanagerAction:(id)sender {
     D3SelectLanguageViewController *_slvctr = [[D3SelectLanguageViewController alloc] init];
     [self.navigationController pushViewController:_slvctr animated:YES];
+    [_slvctr refreshBarItems];
     [_slvctr release];
 }
 - (void)showAboutAction:(id)sender {
     
 }
 - (void)responseNotification:(NSNotification *)notification {
+    [super responseNotification:notification];
     if ([[notification name] isEqualToString:kD3NotificationSupportLanguageChanged]) {
         [self.theTableView reloadData];
+        return;
     }
 }
 
 #pragma mark refresh
-- (void)refreshBarItems {
-    [super refreshBarItems];
-    self.title = @"Settings";
+- (NSString *)controllerTitle {
+    return [SUtil titleOfSettingsViewController];
 }
 
 #pragma mark table
@@ -95,7 +96,7 @@
             cell.customBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:kD3SettingsTableConfigerRowNumber];
             cell.customSelectedBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:kD3SettingsTableConfigerRowNumber];
             
-            cell.lblTitle.text = @"语言";
+            cell.lblTitle.text = [SUtil descriptionOfSettingsTableLanguage];
             cell.lblSubtitle.text = [SSettings descriptionWithD3language:[D3DataManager shareInstance].settings.language];
         }
             break;
@@ -107,12 +108,12 @@
             switch (indexPath.row) {
                 case 0:
                 {
-                    cell.lblTitle.text = @"联系我";
+                    cell.lblTitle.text = [SUtil descriptionOfSettingsTableEmailMe];
                 }
                     break;
                 case 1:
                 {
-                    cell.lblTitle.text = @"关于";
+                    cell.lblTitle.text = [SUtil descriptionOfSettingsTableAboutMe];
                 }
                     break;    
                 default:

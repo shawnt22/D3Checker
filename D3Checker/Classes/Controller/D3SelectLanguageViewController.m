@@ -45,6 +45,11 @@
     [super viewDidUnload];
 }
 
+#pragma mark refresh
+- (NSString *)controllerTitle {
+    return [SUtil titleOfSelectLanguageViewController];
+}
+
 #pragma mark table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *_identifier = @"d3cell";
@@ -80,13 +85,11 @@
     if (indexPath.row == [D3DataManager shareInstance].settings.language) {
         return;
     }
-    
     [D3DataManager shareInstance].settings.language = indexPath.row;
     [[D3DataManager shareInstance].settings saveSettings];
     [[NSNotificationCenter defaultCenter] postNotificationName:kD3NotificationSupportLanguageChanged object:nil userInfo:nil];
     
     [self.theTableView reloadData];
-    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

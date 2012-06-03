@@ -38,6 +38,20 @@ typedef enum {
 #pragma mark Common
 @interface SUtil : NSObject
 
++ (void)alertWithTitle:(NSString *)title Message:(NSString *)message;
+
+@end
+
+#pragma mark - Message
+@interface SUtil (Message)
+
++ (NSString *)titleOfServerStatusViewController;
++ (NSString *)titleOfSettingsViewController;
++ (NSString *)titleOfSelectLanguageViewController;
++ (NSString *)messageOfServerStatusTableEmptyData;
++ (NSString *)descriptionOfSettingsTableLanguage;
++ (NSString *)descriptionOfSettingsTableEmailMe;
++ (NSString *)descriptionOfSettingsTableAboutMe;
 
 @end
 

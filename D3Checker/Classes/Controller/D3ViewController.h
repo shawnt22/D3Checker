@@ -14,5 +14,7 @@
 @interface D3ViewController : UIViewController
 
 - (void)refreshBarItems;
+- (void)responseNotification:(NSNotification *)notification;
+- (NSString *)controllerTitle;
 
 @end
