@@ -19,7 +19,6 @@
 @implementation D3ServerStatusViewController
 @synthesize theTableView;
 @synthesize loader;
-@synthesize needReloadStatus;
 
 #pragma mark init & dealloc
 - (id)init {
@@ -30,8 +29,6 @@
         [_loader release];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(responseNotification:) name:kD3NotificationSupportLanguageChanged object:nil];
-        
-        self.needReloadStatus = YES;
     }
     return self;
 }
@@ -62,13 +59,6 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
 }
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    if (self.needReloadStatus) {
-        [self refreshAction:nil];
-        self.needReloadStatus = NO;
-    }
-}
 
 #pragma mark actions
 - (void)refreshAction:(id)sender {
@@ -76,7 +66,7 @@
 }
 - (void)responseNotification:(NSNotification *)notification {
     if ([[notification name] isEqualToString:kD3NotificationSupportLanguageChanged]) {
-        self.needReloadStatus = YES;
+        [self refreshAction:nil];
     }
 }
 
@@ -142,6 +132,7 @@
         cell.customSelectedBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:_count];
         
         cell.lblTitle.textColor = [self titleColorWithServer:_server];
+        cell.lblTitle.textAlignment = UITextAlignmentLeft;
         cell.lblStatus.textColor = [self statusColorWithServer:_server];
         
         cell.lblTitle.text = _server.title;
@@ -162,7 +153,10 @@
 }
 #define kStatusTableSectionHeaderViewHeight   50.0
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return kStatusTableSectionHeaderViewHeight;
+    if ([self.loader.serverStatuses count] > 0) {
+        return kStatusTableSectionHeaderViewHeight;
+    }
+    return 0.0;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *_headerBG = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];

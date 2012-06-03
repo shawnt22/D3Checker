@@ -41,35 +41,44 @@
 
 #pragma mark - Server Status
 @interface D3ServerStatusLoader()
-@property (nonatomic, retain) NSURLConnection *connection;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic, retain) NSInvocationOperation *statusOperation;
 @end
 
 @implementation D3ServerStatusLoader
 @synthesize serverStatuses;
-@synthesize connection;
+@synthesize operationQueue, statusOperation;
 
 - (id)initWithDelegate:(id<D3LoaderDelegate>)delegate {
     self = [super initWithDelegate:delegate];
     if (self) {
         self.serverStatuses = nil;
-        self.connection = nil;
+        
+        NSOperationQueue *_oq = [[NSOperationQueue alloc] init];
+        [_oq setMaxConcurrentOperationCount:1];
+        self.operationQueue = _oq;
+        [_oq release];
     }
     return self;
 }
 - (void)dealloc {
     self.serverStatuses = nil;
-    self.connection = nil;
+    self.operationQueue = nil;
+    self.statusOperation = nil;
     [super dealloc];
 }
+- (void)cancelAllRequests {
+    [self.operationQueue cancelAllOperations];
+}
 - (void)checkD3ServerStatus {
-//    [self.connection cancel];
-//    
-//    NSURLRequest *_request = [NSURLRequest requestWithURL:[NSURL URLWithString:[SUtil checkD3ServerStatus]]];
-//    NSURLConnection *_connection = [NSURLConnection connectionWithRequest:_request delegate:self];
-//    self.connection = _connection;
-//    
-//    [self.connection start];
+    [self.statusOperation cancel];
+    NSInvocationOperation *_so = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(performOperation:) object:nil];
+    self.statusOperation = _so;
+    [_so release];
     
+    [self.operationQueue addOperation:self.statusOperation];
+}
+- (void)performOperation:(NSInvocationOperation *)operation {
     NSData *_data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[SUtil checkD3ServerStatus]]];
     NSString *_string = [[NSString alloc] initWithData:_data encoding:NSUTF8StringEncoding];
     NSError *_error = [self parserResponse:_string withD3Loader:self];
@@ -77,6 +86,7 @@
         [self notifyD3loaderDidFailLoadWith:self Error:[SUtil errorWithCode:D3ErrorParserFail]];
     } else {
         [self notifyD3loaderDidFinishLoadWith:self];
+        NSLog(@"finish");
     }
     [_string release];
 }

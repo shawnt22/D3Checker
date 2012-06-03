@@ -26,7 +26,7 @@
         
         UILabel *_lblT = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, [D3ServerStatusCell cellHeight])];
         _lblT.backgroundColor = [UIColor clearColor];
-        _lblT.font = [UIFont systemFontOfSize:16];
+        _lblT.font = [UIFont systemFontOfSize:14];
         _lblT.textAlignment = UITextAlignmentLeft;
         [self.contentView addSubview:_lblT];
         self.lblTitle = _lblT;
