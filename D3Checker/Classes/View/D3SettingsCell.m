@@ -10,17 +10,25 @@
 
 @implementation D3SettingsCell
 @synthesize lblTitle, lblSubtitle;
+@synthesize iconImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        UILabel *_lt = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 90, [D3SettingsCell cellHeight])];
-        _lt.backgroundColor = [UIColor clearColor];
-        _lt.font = [UIFont systemFontOfSize:16];
-        _lt.textAlignment = UITextAlignmentLeft;
-        [self.contentView addSubview:_lt];
-        self.lblTitle = _lt;
-        [_lt release];
+//        UILabel *_lt = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 90, [D3SettingsCell cellHeight])];
+//        _lt.backgroundColor = [UIColor clearColor];
+//        _lt.font = [UIFont systemFontOfSize:16];
+//        _lt.textAlignment = UITextAlignmentLeft;
+//        [self.contentView addSubview:_lt];
+//        self.lblTitle = _lt;
+//        [_lt release];
+        self.lblTitle = nil;
+        
+        UIImageView *_icon = [[UIImageView alloc] initWithFrame:CGRectMake(5, ceilf(([D3SettingsCell cellHeight] - 32)/2), 32, 32)];
+        _icon.backgroundColor = [UIColor clearColor];
+        [self.contentView addSubview:_icon];
+        self.iconImage = _icon;
+        [_icon release];
         
         UILabel *_ls = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, 170, [D3SettingsCell cellHeight])];
         _ls.backgroundColor = [UIColor clearColor];

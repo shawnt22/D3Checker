@@ -11,6 +11,7 @@
 @interface D3SettingsCell : TCustomBGCell
 @property (nonatomic, assign) UILabel *lblTitle;
 @property (nonatomic, assign) UILabel *lblSubtitle;
+@property (nonatomic, assign) UIImageView *iconImage;
 
 + (CGFloat)cellHeight;
 

@@ -15,13 +15,14 @@
 
 - (void)emailMeAction:(id)sender;
 - (void)changeLanagerAction:(id)sender;
+- (UIImage *)iconWithIndex:(NSIndexPath *)indexPath;
 @end
 
 @implementation D3SettingsViewController
 @synthesize theTableView;
 
-#define kD3SettingsTableSectionNumber 2
-#define kD3SettingsTableConfigerRowNumber 1
+#define kD3SettingsTableSectionNumber 1
+#define kD3SettingsTableConfigerRowNumber 2
 #define kD3SettingsTableAboutRowNumber 2
 
 #pragma mark init & dealloc
@@ -48,6 +49,22 @@
     [self.view addSubview:_tb];
     self.theTableView = _tb;
     [_tb release];
+    
+    UIView *_bgFooter = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.theTableView.bounds.size.width, 230)];
+    _bgFooter.backgroundColor = [UIColor clearColor];
+    
+    CGFloat _cpHeight = 30.0;
+    UILabel *_cpright = [[UILabel alloc] initWithFrame:CGRectMake(0, _bgFooter.bounds.size.height-_cpHeight, _bgFooter.bounds.size.width, _cpHeight)];
+    _cpright.backgroundColor = [UIColor clearColor];
+    _cpright.textColor = SRGBCOLOR(123, 123, 123);
+    _cpright.textAlignment = UITextAlignmentCenter;
+    _cpright.font = [UIFont systemFontOfSize:12];
+    _cpright.text = @"Copyright shawnt22@gmail.com. All rights reserved.";
+    [_bgFooter addSubview:_cpright];
+    [_cpright release];
+    
+    self.theTableView.tableFooterView = _bgFooter;
+    [_bgFooter release];
 }
 - (void)viewDidUnload {
     [super viewDidUnload];
@@ -55,7 +72,7 @@
 
 #pragma mark actions
 - (void)emailMeAction:(id)sender {
-    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:shawnt22@gmail.com"]];
 }
 - (void)changeLanagerAction:(id)sender {
     D3SelectLanguageViewController *_slvctr = [[D3SelectLanguageViewController alloc] init];
@@ -86,6 +103,24 @@
 }
 
 #pragma mark table
+- (UIImage *)iconWithIndex:(NSIndexPath *)indexPath {
+    UIImage *icon = nil;
+    switch (indexPath.row) {
+        case 0:
+        {
+            icon = [Util imageWithName:@"bg_language"];
+        }
+            break;
+        case 1:
+        {
+            icon = [Util imageWithName:@"bg_mail"];
+        }
+            break;    
+        default:
+            break;
+    }
+    return icon;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *_identifier = @"d3cell";
     D3SettingsCell *cell = (D3SettingsCell *)[tableView dequeueReusableCellWithIdentifier:_identifier];
@@ -102,31 +137,12 @@
             cell.customBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:kD3SettingsTableConfigerRowNumber];
             cell.customSelectedBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:kD3SettingsTableConfigerRowNumber];
             
-            cell.lblTitle.text = [SUtil descriptionOfSettingsTableLanguage];
-            cell.lblSubtitle.text = [SSettings descriptionWithD3language:[D3DataManager shareInstance].settings.language];
-        }
-            break;
-        case 1:
-        {
-            cell.customBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:kD3SettingsTableAboutRowNumber];
-            cell.customSelectedBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:kD3SettingsTableAboutRowNumber];
-            
-            switch (indexPath.row) {
-                case 0:
-                {
-                    cell.lblTitle.text = [SUtil descriptionOfSettingsTableEmailMe];
-                }
-                    break;
-                case 1:
-                {
-                    cell.lblTitle.text = [SUtil descriptionOfSettingsTableAboutMe];
-                }
-                    break;    
-                default:
-                    break;
+            cell.iconImage.image = [self iconWithIndex:indexPath];
+            if (indexPath.row == 0) {
+                cell.lblSubtitle.text = [SSettings descriptionWithD3language:[D3DataManager shareInstance].settings.language];
             }
         }
-            break;    
+            break;  
         default:
             break;
     }
@@ -141,9 +157,6 @@
         case 0:
             return kD3SettingsTableConfigerRowNumber;
             break;
-        case 1:
-            return kD3SettingsTableAboutRowNumber;
-            break;    
         default:
             break;
     }
@@ -158,20 +171,15 @@
     switch (indexPath.section) {
         case 0:
         {
-            [self changeLanagerAction:nil];
-        }
-            break;
-        case 1:
-        {
             switch (indexPath.row) {
                 case 0:
                 {
-                    [self emailMeAction:nil];
+                    [self changeLanagerAction:nil];
                 }
                     break;
                 case 1:
                 {
-                    [self showAboutAction:nil];
+                    [self emailMeAction:nil];
                 }
                     break;    
                 default:
