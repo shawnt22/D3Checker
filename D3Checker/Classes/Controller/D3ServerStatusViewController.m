@@ -62,6 +62,7 @@
 
 #pragma mark actions
 - (void)refreshAction:(id)sender {
+    [self showProgressHUDWithAnimated:YES];
     [self.loader checkD3ServerStatus];
 }
 - (void)responseNotification:(NSNotification *)notification {
@@ -79,10 +80,12 @@
 
 #pragma mark loader
 - (void)d3loaderDidFinishLoadWith:(D3Loader *)d3loader {
+    [self hideProgressHUDWithAnimated:YES];
     [self.theTableView reloadData];
     [self updateTableFooterView];
 }
 - (void)d3loaderDidFailLoadWith:(D3Loader *)d3loader Error:(NSError *)error {
+    [self hideProgressHUDWithAnimated:YES];
     [SUtil alertWithTitle:nil Message:[error localizedDescription]];
 }
 - (void)d3loaderDidCancelLoadWith:(D3Loader *)d3loader {}

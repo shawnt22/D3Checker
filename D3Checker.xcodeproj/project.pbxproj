@@ -34,6 +34,7 @@
 		6073ECFA157B98CC005C820D /* btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073ECF5157B98CC005C820D /* btn_back.png */; };
 		6073ECFB157B98CC005C820D /* btn_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073ECF6157B98CC005C820D /* btn_refresh.png */; };
 		6081B6F6157B20490003CDBD /* SStatusControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6081B6F5157B20490003CDBD /* SStatusControl.m */; };
+		60CAA1A9157BBC7200A324BA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CAA1A8157BBC7100A324BA /* MBProgressHUD.m */; };
 		60F72F7D1579C73B008EE97C /* D3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F7C1579C73B008EE97C /* D3ViewController.m */; };
 		60F72F811579C75F008EE97C /* D3ServerStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F801579C75F008EE97C /* D3ServerStatusViewController.m */; };
 		60F72F841579C782008EE97C /* D3SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F831579C782008EE97C /* D3SettingsViewController.m */; };
@@ -85,6 +86,8 @@
 		6073ECF6157B98CC005C820D /* btn_refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_refresh.png; sourceTree = "<group>"; };
 		6081B6F4157B20490003CDBD /* SStatusControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SStatusControl.h; sourceTree = "<group>"; };
 		6081B6F5157B20490003CDBD /* SStatusControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SStatusControl.m; sourceTree = "<group>"; };
+		60CAA1A7157BBC7100A324BA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		60CAA1A8157BBC7100A324BA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		60F72F7B1579C73B008EE97C /* D3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ViewController.h; sourceTree = "<group>"; };
 		60F72F7C1579C73B008EE97C /* D3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ViewController.m; sourceTree = "<group>"; };
 		60F72F7F1579C75F008EE97C /* D3ServerStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ServerStatusViewController.h; sourceTree = "<group>"; };
@@ -228,6 +231,8 @@
 		6043511C15790D1D00FEC968 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				60CAA1A7157BBC7100A324BA /* MBProgressHUD.h */,
+				60CAA1A8157BBC7100A324BA /* MBProgressHUD.m */,
 				60F72F941579CD80008EE97C /* D3CustomBGCell.h */,
 				60F72F951579CD80008EE97C /* D3CustomBGCell.m */,
 				60F72F971579CDEB008EE97C /* D3TableView.h */,
@@ -389,6 +394,7 @@
 				6019348C157A0A8400257D1D /* D3SettingsCell.m in Sources */,
 				60193493157A150B00257D1D /* D3SelectLanguageViewController.m in Sources */,
 				6081B6F6157B20490003CDBD /* SStatusControl.m in Sources */,
+				60CAA1A9157BBC7200A324BA /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

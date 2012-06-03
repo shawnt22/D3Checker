@@ -50,7 +50,7 @@
     self.theTableView = _tb;
     [_tb release];
     
-    UIView *_bgFooter = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.theTableView.bounds.size.width, 230)];
+    UIView *_bgFooter = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.theTableView.bounds.size.width, 240)];
     _bgFooter.backgroundColor = [UIColor clearColor];
     
     CGFloat _cpHeight = 30.0;

@@ -9,6 +9,7 @@
 #import "D3ViewController.h"
 
 @implementation D3ViewController
+@synthesize progressControl = _progressControl;
 
 #pragma mark init & dealloc
 - (id)init {
@@ -19,17 +20,36 @@
     return self;
 }
 - (void)dealloc {
+    [self hideProgressHUDWithAnimated:NO];
+    self.progressControl = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kD3NotificationSupportLanguageChanged object:nil];
     [super dealloc];
+}
+
+#pragma mark progress HUD
+- (void)showProgressHUDWithAnimated:(BOOL)animated {
+    [self.view bringSubviewToFront:self.progressControl];
+    [self.progressControl showControlWithAnimated:animated];
+}
+- (void)hideProgressHUDWithAnimated:(BOOL)animated {
+    [self.progressControl hideControlWithAnimated:animated];
 }
 
 #pragma mark controller delegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = SRGBCOLOR(250, 250, 250);
+    
+    CGFloat _ctrWH = 60.0;
+    SStatusControl *_sctr = [[SStatusControl alloc] initWithFrame:CGRectMake(ceilf((self.view.bounds.size.width-_ctrWH)/2), ceilf((self.view.bounds.size.height-93-_ctrWH)/2), _ctrWH, _ctrWH)];
+    _sctr.hidden = YES;
+    [self.view addSubview:_sctr];
+    self.progressControl = _sctr;
+    [_sctr release];
 }
 - (void)viewDidUnload {
     [super viewDidUnload];
+    [self hideProgressHUDWithAnimated:NO];
 }
 
 #pragma mark refresh
