@@ -75,6 +75,13 @@
 }
 
 #pragma mark refresh
+- (void)refreshBarItems {
+    [super refreshBarItems];
+    
+    UIImage *_settingsImage = [Util imageWithName:@"bg_settings"];
+    _settingsImage = [[UIImage alloc] initWithCGImage:_settingsImage.CGImage scale:1.0 orientation:UIImageOrientationUp];
+    self.navigationController.tabBarItem.image = _settingsImage;
+}
 - (NSString *)controllerTitle {
     return [SUtil titleOfSettingsViewController];
 }

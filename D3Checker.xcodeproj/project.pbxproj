@@ -28,6 +28,12 @@
 		6043513D15791B3000FEC968 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6043513C15791B3000FEC968 /* QuartzCore.framework */; };
 		6043513F15791BCB00FEC968 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6043513E15791BCA00FEC968 /* CoreLocation.framework */; };
 		6043514215791C3500FEC968 /* D3Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043514115791C3500FEC968 /* D3Server.m */; };
+		6073ECF7157B98CC005C820D /* bg_language.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073ECF2157B98CC005C820D /* bg_language.png */; };
+		6073ECF8157B98CC005C820D /* bg_mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073ECF3157B98CC005C820D /* bg_mail.png */; };
+		6073ECF9157B98CC005C820D /* bg_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073ECF4157B98CC005C820D /* bg_settings.png */; };
+		6073ECFA157B98CC005C820D /* btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073ECF5157B98CC005C820D /* btn_back.png */; };
+		6073ECFB157B98CC005C820D /* btn_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073ECF6157B98CC005C820D /* btn_refresh.png */; };
+		6081B6F6157B20490003CDBD /* SStatusControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6081B6F5157B20490003CDBD /* SStatusControl.m */; };
 		60F72F7D1579C73B008EE97C /* D3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F7C1579C73B008EE97C /* D3ViewController.m */; };
 		60F72F811579C75F008EE97C /* D3ServerStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F801579C75F008EE97C /* D3ServerStatusViewController.m */; };
 		60F72F841579C782008EE97C /* D3SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F831579C782008EE97C /* D3SettingsViewController.m */; };
@@ -72,6 +78,13 @@
 		6043513E15791BCA00FEC968 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6043514015791C3500FEC968 /* D3Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = D3Server.h; path = ../../../../DiabloNetCheckerParserTest/DiabloNetCheckerParserTest/D3Server.h; sourceTree = "<group>"; };
 		6043514115791C3500FEC968 /* D3Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = D3Server.m; path = ../../../../DiabloNetCheckerParserTest/DiabloNetCheckerParserTest/D3Server.m; sourceTree = "<group>"; };
+		6073ECF2157B98CC005C820D /* bg_language.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_language.png; sourceTree = "<group>"; };
+		6073ECF3157B98CC005C820D /* bg_mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_mail.png; sourceTree = "<group>"; };
+		6073ECF4157B98CC005C820D /* bg_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_settings.png; sourceTree = "<group>"; };
+		6073ECF5157B98CC005C820D /* btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_back.png; sourceTree = "<group>"; };
+		6073ECF6157B98CC005C820D /* btn_refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_refresh.png; sourceTree = "<group>"; };
+		6081B6F4157B20490003CDBD /* SStatusControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SStatusControl.h; sourceTree = "<group>"; };
+		6081B6F5157B20490003CDBD /* SStatusControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SStatusControl.m; sourceTree = "<group>"; };
 		60F72F7B1579C73B008EE97C /* D3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ViewController.h; sourceTree = "<group>"; };
 		60F72F7C1579C73B008EE97C /* D3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ViewController.m; sourceTree = "<group>"; };
 		60F72F7F1579C75F008EE97C /* D3ServerStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ServerStatusViewController.h; sourceTree = "<group>"; };
@@ -223,6 +236,8 @@
 				601934841579FA0500257D1D /* D3ServerStatusCell.m */,
 				6019348A157A0A8400257D1D /* D3SettingsCell.h */,
 				6019348B157A0A8400257D1D /* D3SettingsCell.m */,
+				6081B6F4157B20490003CDBD /* SStatusControl.h */,
+				6081B6F5157B20490003CDBD /* SStatusControl.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,6 +253,11 @@
 		6043511E15790D1D00FEC968 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				6073ECF2157B98CC005C820D /* bg_language.png */,
+				6073ECF3157B98CC005C820D /* bg_mail.png */,
+				6073ECF4157B98CC005C820D /* bg_settings.png */,
+				6073ECF5157B98CC005C820D /* btn_back.png */,
+				6073ECF6157B98CC005C820D /* btn_refresh.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -335,6 +355,11 @@
 			files = (
 				6043510315790BC600FEC968 /* InfoPlist.strings in Resources */,
 				6043511715790D0600FEC968 /* README.md in Resources */,
+				6073ECF7157B98CC005C820D /* bg_language.png in Resources */,
+				6073ECF8157B98CC005C820D /* bg_mail.png in Resources */,
+				6073ECF9157B98CC005C820D /* bg_settings.png in Resources */,
+				6073ECFA157B98CC005C820D /* btn_back.png in Resources */,
+				6073ECFB157B98CC005C820D /* btn_refresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +388,7 @@
 				601934851579FA0500257D1D /* D3ServerStatusCell.m in Sources */,
 				6019348C157A0A8400257D1D /* D3SettingsCell.m in Sources */,
 				60193493157A150B00257D1D /* D3SelectLanguageViewController.m in Sources */,
+				6081B6F6157B20490003CDBD /* SStatusControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
