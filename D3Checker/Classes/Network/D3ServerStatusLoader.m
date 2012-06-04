@@ -7,20 +7,48 @@
 //
 
 #import "D3ServerStatusLoader.h"
+#import "Reachability.h"
 
+@interface D3Loader()
+@property (nonatomic, retain) Reachability *reachability;
+- (BOOL)checkNetworkStatus;
+- (void)networkReadyToRequest;
+@end
 @implementation D3Loader
 @synthesize delegate;
+@synthesize reachability;
 
 - (id)initWithDelegate:(id<D3LoaderDelegate>)adelegate {
     self = [super init];
     if (self) {
         self.delegate = adelegate;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+        self.reachability = [Reachability reachabilityWithHostName:@"www.baidu.com"];
     }
     return self;
 }
-- (void)cancelAllRequests {
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kReachabilityChangedNotification object:nil];
+    self.reachability = nil;
+    [super dealloc];
 }
-
+- (void)cancelAllRequests {
+    [self.reachability stopNotifier];
+}
+- (BOOL)checkNetworkStatus {
+    [self.reachability stopNotifier];
+    return [self.reachability startNotifier];
+}
+- (void)reachabilityChanged:(NSNotification *)notification {
+    Reachability *curReach = [notification object];
+    if ([curReach currentReachabilityStatus] != NotReachable) {
+        [self networkReadyToRequest];
+    } else {
+        [self notifyD3loaderDidFailLoadWith:self Error:[SUtil errorWithCode:D3ErrorCanntConnect]];
+    }
+}
+- (void)networkReadyToRequest {}
 - (void)notifyD3loaderDidFinishLoadWith:(D3Loader *)d3loader {
     if (self.delegate && [self.delegate respondsToSelector:@selector(d3loaderDidFinishLoadWith:)]) {
         [self.delegate d3loaderDidFinishLoadWith:d3loader];
@@ -71,6 +99,11 @@
     [self.operationQueue cancelAllOperations];
 }
 - (void)checkD3ServerStatus {
+    if (![self checkNetworkStatus]) {
+        [self notifyD3loaderDidFailLoadWith:self Error:[SUtil errorWithCode:D3ErrorCanntConnect]];
+    }
+}
+- (void)networkReadyToRequest {
     [self.statusOperation cancel];
     NSInvocationOperation *_so = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(performOperation:) object:nil];
     self.statusOperation = _so;

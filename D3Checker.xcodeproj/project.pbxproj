@@ -40,6 +40,8 @@
 		60F72F841579C782008EE97C /* D3SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F831579C782008EE97C /* D3SettingsViewController.m */; };
 		60F72F961579CD80008EE97C /* D3CustomBGCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F951579CD80008EE97C /* D3CustomBGCell.m */; };
 		60F72F991579CDEB008EE97C /* D3TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F981579CDEB008EE97C /* D3TableView.m */; };
+		60F961F4157C87D600C96AEB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F961F3157C87D600C96AEB /* Reachability.m */; };
+		60F961F7157C890F00C96AEB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F961F6157C890F00C96AEB /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +100,9 @@
 		60F72F951579CD80008EE97C /* D3CustomBGCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3CustomBGCell.m; sourceTree = "<group>"; };
 		60F72F971579CDEB008EE97C /* D3TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3TableView.h; sourceTree = "<group>"; };
 		60F72F981579CDEB008EE97C /* D3TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3TableView.m; sourceTree = "<group>"; };
+		60F961F2157C87D600C96AEB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		60F961F3157C87D600C96AEB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		60F961F6157C890F00C96AEB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60F961F7157C890F00C96AEB /* SystemConfiguration.framework in Frameworks */,
 				6043513F15791BCB00FEC968 /* CoreLocation.framework in Frameworks */,
 				6043513D15791B3000FEC968 /* QuartzCore.framework in Frameworks */,
 				6043512015790D4600FEC968 /* libxml2.dylib in Frameworks */,
@@ -138,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				6043510F15790D0600FEC968 /* HTMLParser */,
+				60F961F6157C890F00C96AEB /* SystemConfiguration.framework */,
 				6043513E15791BCA00FEC968 /* CoreLocation.framework */,
 				6043513C15791B3000FEC968 /* QuartzCore.framework */,
 				604350F815790BC600FEC968 /* UIKit.framework */,
@@ -270,6 +277,8 @@
 		6043512315790DCE00FEC968 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				60F961F2157C87D600C96AEB /* Reachability.h */,
+				60F961F3157C87D600C96AEB /* Reachability.m */,
 				604351381579171300FEC968 /* D3ServerStatusLoader.h */,
 				604351391579171300FEC968 /* D3ServerStatusLoader.m */,
 			);
@@ -395,6 +404,7 @@
 				60193493157A150B00257D1D /* D3SelectLanguageViewController.m in Sources */,
 				6081B6F6157B20490003CDBD /* SStatusControl.m in Sources */,
 				60CAA1A9157BBC7200A324BA /* MBProgressHUD.m in Sources */,
+				60F961F4157C87D600C96AEB /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
