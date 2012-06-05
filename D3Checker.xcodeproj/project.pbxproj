@@ -10,6 +10,7 @@
 		601934851579FA0500257D1D /* D3ServerStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 601934841579FA0500257D1D /* D3ServerStatusCell.m */; };
 		6019348C157A0A8400257D1D /* D3SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6019348B157A0A8400257D1D /* D3SettingsCell.m */; };
 		60193493157A150B00257D1D /* D3SelectLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60193492157A150B00257D1D /* D3SelectLanguageViewController.m */; };
+		6025FC1B157E5E5100A07B48 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6025FC1A157E5E5100A07B48 /* icon@2x.png */; };
 		604350F915790BC600FEC968 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604350F815790BC600FEC968 /* UIKit.framework */; };
 		604350FB15790BC600FEC968 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604350FA15790BC600FEC968 /* Foundation.framework */; };
 		604350FD15790BC600FEC968 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604350FC15790BC600FEC968 /* CoreGraphics.framework */; };
@@ -51,6 +52,7 @@
 		6019348B157A0A8400257D1D /* D3SettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3SettingsCell.m; sourceTree = "<group>"; };
 		60193491157A150B00257D1D /* D3SelectLanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3SelectLanguageViewController.h; sourceTree = "<group>"; };
 		60193492157A150B00257D1D /* D3SelectLanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3SelectLanguageViewController.m; sourceTree = "<group>"; };
+		6025FC1A157E5E5100A07B48 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		604350F415790BC600FEC968 /* D3Checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D3Checker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		604350F815790BC600FEC968 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		604350FA15790BC600FEC968 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -265,6 +267,7 @@
 		6043511E15790D1D00FEC968 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				6025FC1A157E5E5100A07B48 /* icon@2x.png */,
 				6073ECF2157B98CC005C820D /* bg_language.png */,
 				6073ECF3157B98CC005C820D /* bg_mail.png */,
 				6073ECF4157B98CC005C820D /* bg_settings@2x.png */,
@@ -374,6 +377,7 @@
 				6073ECF9157B98CC005C820D /* bg_settings@2x.png in Resources */,
 				6073ECFA157B98CC005C820D /* btn_back.png in Resources */,
 				6073ECFB157B98CC005C820D /* btn_refresh.png in Resources */,
+				6025FC1B157E5E5100A07B48 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
