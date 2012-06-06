@@ -28,7 +28,6 @@
 		6043513A1579171300FEC968 /* D3ServerStatusLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 604351391579171300FEC968 /* D3ServerStatusLoader.m */; };
 		6043513D15791B3000FEC968 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6043513C15791B3000FEC968 /* QuartzCore.framework */; };
 		6043513F15791BCB00FEC968 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6043513E15791BCA00FEC968 /* CoreLocation.framework */; };
-		6043514215791C3500FEC968 /* D3Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043514115791C3500FEC968 /* D3Server.m */; };
 		6073ECF7157B98CC005C820D /* bg_language.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073ECF2157B98CC005C820D /* bg_language.png */; };
 		6073ECF8157B98CC005C820D /* bg_mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073ECF3157B98CC005C820D /* bg_mail.png */; };
 		6073ECF9157B98CC005C820D /* bg_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073ECF4157B98CC005C820D /* bg_settings@2x.png */; };
@@ -36,6 +35,7 @@
 		6073ECFB157B98CC005C820D /* btn_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073ECF6157B98CC005C820D /* btn_refresh.png */; };
 		6081B6F6157B20490003CDBD /* SStatusControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6081B6F5157B20490003CDBD /* SStatusControl.m */; };
 		60CAA1A9157BBC7200A324BA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CAA1A8157BBC7100A324BA /* MBProgressHUD.m */; };
+		60DE680F157FAAFC0029FC88 /* D3Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DE680E157FAAFC0029FC88 /* D3Server.m */; };
 		60F72F7D1579C73B008EE97C /* D3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F7C1579C73B008EE97C /* D3ViewController.m */; };
 		60F72F811579C75F008EE97C /* D3ServerStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F801579C75F008EE97C /* D3ServerStatusViewController.m */; };
 		60F72F841579C782008EE97C /* D3SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F831579C782008EE97C /* D3SettingsViewController.m */; };
@@ -81,8 +81,6 @@
 		604351391579171300FEC968 /* D3ServerStatusLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ServerStatusLoader.m; sourceTree = "<group>"; };
 		6043513C15791B3000FEC968 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6043513E15791BCA00FEC968 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		6043514015791C3500FEC968 /* D3Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = D3Server.h; path = ../../../../DiabloNetCheckerParserTest/DiabloNetCheckerParserTest/D3Server.h; sourceTree = "<group>"; };
-		6043514115791C3500FEC968 /* D3Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = D3Server.m; path = ../../../../DiabloNetCheckerParserTest/DiabloNetCheckerParserTest/D3Server.m; sourceTree = "<group>"; };
 		6073ECF2157B98CC005C820D /* bg_language.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_language.png; sourceTree = "<group>"; };
 		6073ECF3157B98CC005C820D /* bg_mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_mail.png; sourceTree = "<group>"; };
 		6073ECF4157B98CC005C820D /* bg_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_settings@2x.png"; sourceTree = "<group>"; };
@@ -92,6 +90,8 @@
 		6081B6F5157B20490003CDBD /* SStatusControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SStatusControl.m; sourceTree = "<group>"; };
 		60CAA1A7157BBC7100A324BA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		60CAA1A8157BBC7100A324BA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		60DE680D157FAAFC0029FC88 /* D3Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Server.h; sourceTree = "<group>"; };
+		60DE680E157FAAFC0029FC88 /* D3Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Server.m; sourceTree = "<group>"; };
 		60F72F7B1579C73B008EE97C /* D3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ViewController.h; sourceTree = "<group>"; };
 		60F72F7C1579C73B008EE97C /* D3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ViewController.m; sourceTree = "<group>"; };
 		60F72F7F1579C75F008EE97C /* D3ServerStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ServerStatusViewController.h; sourceTree = "<group>"; };
@@ -227,8 +227,8 @@
 		6043511B15790D1D00FEC968 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6043514015791C3500FEC968 /* D3Server.h */,
-				6043514115791C3500FEC968 /* D3Server.m */,
+				60DE680D157FAAFC0029FC88 /* D3Server.h */,
+				60DE680E157FAAFC0029FC88 /* D3Server.m */,
 				6043512415790E5400FEC968 /* SSettings.h */,
 				6043512515790E5400FEC968 /* SSettings.m */,
 				604351351579154900FEC968 /* D3DataManager.h */,
@@ -397,7 +397,6 @@
 				604351341579104E00FEC968 /* SUtil.m in Sources */,
 				604351371579154900FEC968 /* D3DataManager.m in Sources */,
 				6043513A1579171300FEC968 /* D3ServerStatusLoader.m in Sources */,
-				6043514215791C3500FEC968 /* D3Server.m in Sources */,
 				60F72F7D1579C73B008EE97C /* D3ViewController.m in Sources */,
 				60F72F811579C75F008EE97C /* D3ServerStatusViewController.m in Sources */,
 				60F72F841579C782008EE97C /* D3SettingsViewController.m in Sources */,
@@ -409,6 +408,7 @@
 				6081B6F6157B20490003CDBD /* SStatusControl.m in Sources */,
 				60CAA1A9157BBC7200A324BA /* MBProgressHUD.m in Sources */,
 				60F961F4157C87D600C96AEB /* Reachability.m in Sources */,
+				60DE680F157FAAFC0029FC88 /* D3Server.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
