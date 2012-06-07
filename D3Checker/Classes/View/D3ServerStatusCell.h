@@ -8,10 +8,17 @@
 
 #import "D3CustomBGCell.h"
 
-@interface D3ServerStatusCell : TCustomBGCell
+@protocol D3CustomBGCellProtocol <NSObject>
+@optional
++ (UIColor *)cellBGColorWithIndexPath:(NSIndexPath *)indexPath;
++ (void)refreshCellBGView;
+@end
+
+@interface D3ServerStatusCell : D3CustomBGCell
 
 @property (nonatomic, assign) UILabel *lblTitle;
 @property (nonatomic, assign) UILabel *lblStatus;
+@property (nonatomic, assign) UIImageView *flagStatus;
 
 + (CGFloat)cellHeight;
 

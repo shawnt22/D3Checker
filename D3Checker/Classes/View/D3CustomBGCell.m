@@ -248,3 +248,27 @@
 }
 
 @end
+
+
+
+#pragma mark - D3CustomBGCell
+#import "Util.h"
+@implementation D3CustomBGCell
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        self.customBackgroundView.lineRadius = 4.0;
+        self.customSelectedBackgroundView.lineRadius = 4.0;
+        self.customBackgroundView.lineColor = SRGBCOLOR(40, 36, 29);
+        self.customSelectedBackgroundView.lineColor = SRGBCOLOR(40, 36, 29);
+        
+        self.customSelectedBackgroundView.fillColor = SRGBCOLOR(50, 45, 35);
+    }
+    return self;
+}
+- (void)refreshD3CustomBGViewWithIndexPath:(NSIndexPath *)indexPath {
+    self.customBackgroundView.fillColor = indexPath.row % 2 == 0 ? SRGBCOLOR(18, 17, 15) : SRGBCOLOR(23, 22, 20);
+}
+
+@end

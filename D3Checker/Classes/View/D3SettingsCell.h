@@ -8,7 +8,7 @@
 
 #import "D3CustomBGCell.h"
 
-@interface D3SettingsCell : TCustomBGCell
+@interface D3SettingsCell : D3CustomBGCell
 @property (nonatomic, assign) UILabel *lblTitle;
 @property (nonatomic, assign) UILabel *lblSubtitle;
 @property (nonatomic, assign) UIImageView *iconImage;
@@ -17,7 +17,7 @@
 
 @end
 
-@interface D3SelectLanguageCell : TCustomBGCell
+@interface D3SelectLanguageCell : D3CustomBGCell
 @property (nonatomic, assign) UILabel *lblTitle;
 
 + (CGFloat)cellHeight;

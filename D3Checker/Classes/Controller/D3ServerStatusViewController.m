@@ -12,6 +12,10 @@
 @interface D3ServerStatusViewController ()
 @property (nonatomic, assign) D3TableView *theTableView;
 @property (nonatomic, retain) D3ServerStatusLoader *loader;
+
+@property (nonatomic, retain) UIImage *flagStatusAvailable;
+@property (nonatomic, retain) UIImage *flagStatusMaintenance;
+
 - (void)refreshAction:(id)sender;
 - (UIColor *)titleColorWithServer:(D3ItemServer *)server;
 - (UIColor *)statusColorWithServer:(D3ItemServer *)server;
@@ -20,6 +24,7 @@
 @implementation D3ServerStatusViewController
 @synthesize theTableView;
 @synthesize loader;
+@synthesize flagStatusAvailable, flagStatusMaintenance;
 
 #pragma mark init & dealloc
 - (id)init {
@@ -28,6 +33,10 @@
         D3ServerStatusLoader *_loader = [[D3ServerStatusLoader alloc] initWithDelegate:self];
         self.loader = _loader;
         [_loader release];
+        
+        UIImage *_flags = [Util imageWithName:@"bg_status_flag" ofType:@"gif"];
+        self.flagStatusAvailable = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(_flags.CGImage, CGRectMake(24, 0, 24, 27))];
+        self.flagStatusMaintenance = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(_flags.CGImage, CGRectMake(0, 0, 24, 27))];
     }
     return self;
 }
@@ -46,7 +55,6 @@
     [_refresh release];
     
     D3TableView *_tb = [[D3TableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-self.navigationController.navigationBar.bounds.size.height-self.tabBarController.tabBar.bounds.size.height) style:UITableViewStyleGrouped];
-    NSLog(@"%@", NSStringFromCGRect(_tb.bounds));
     _tb.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tb.backgroundColor = [UIColor clearColor];
     _tb.delegate = self;
@@ -109,10 +117,10 @@
     UIColor *_color = [UIColor blackColor];
     switch (server.serverType) {
         case D3ItemServerGame:
-            _color = SRGBCOLOR(124, 84, 43);
+            _color = SRGBCOLOR(123, 109, 85);
             break;
         case D3ItemServerStore:
-            _color = SRGBCOLOR(125, 84, 43);
+            _color = SRGBCOLOR(169, 152, 111);
             break;    
         default:
             break;
@@ -146,15 +154,17 @@
     NSInteger _count = [_cs serversTotalCount];
     D3ItemServer *_server = [_cs serverAtIndex:indexPath.row];
     
+    [cell refreshD3CustomBGViewWithIndexPath:indexPath];
     cell.customBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:_count];
     cell.customSelectedBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:_count];
     
     cell.lblTitle.textColor = [self titleColorWithServer:_server];
     cell.lblTitle.textAlignment = UITextAlignmentLeft;
-    cell.lblStatus.textColor = [self statusColorWithServer:_server];
+    //cell.lblStatus.textColor = [self statusColorWithServer:_server];
     
     cell.lblTitle.text = _server.title;
-    cell.lblStatus.text = _server.status;
+    //cell.lblStatus.text = _server.status;
+    cell.flagStatus.image = _server.statusType == D3ItemServerStatusAvailable ? self.flagStatusAvailable : self.flagStatusMaintenance;
     
     return cell;
 }
@@ -173,7 +183,7 @@
     UILabel *_category = [[UILabel alloc] initWithFrame:CGRectMake(25, 0, 270, kStatusTableSectionHeaderViewHeight)];
     _category.backgroundColor = [UIColor clearColor];
     _category.font = [UIFont boldSystemFontOfSize:20];
-    _category.textColor = SRGBCOLOR(238, 224, 196);
+    _category.textColor = SRGBCOLOR(243, 230, 208);
     [_headerBG addSubview:_category];
     [_category release];
     

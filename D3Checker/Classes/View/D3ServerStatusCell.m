@@ -13,18 +13,12 @@
 @end
 
 @implementation D3ServerStatusCell
-@synthesize lblTitle, lblStatus;
+@synthesize lblTitle, lblStatus, flagStatus;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-//        self.customBackgroundView.fillColor = SRGBCOLOR(15, 14, 13);
-//        self.customBackgroundView.lineColor = SRGBCOLOR(30, 27, 22);
-//        
-//        self.customSelectedBackgroundView.fillColor = SRGBCOLOR(18, 17, 16);
-//        self.customSelectedBackgroundView.lineColor = SRGBCOLOR(30, 27, 22);
-        
-        UILabel *_lblT = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, [D3ServerStatusCell cellHeight])];
+        UILabel *_lblT = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 250, [D3ServerStatusCell cellHeight])];        //  150 -> 250
         _lblT.backgroundColor = [UIColor clearColor];
         _lblT.font = [UIFont systemFontOfSize:14];
         _lblT.textAlignment = UITextAlignmentLeft;
@@ -32,13 +26,19 @@
         self.lblTitle = _lblT;
         [_lblT release];
         
-        UILabel *_lblS = [[UILabel alloc] initWithFrame:CGRectMake(150, 0, 135, [D3ServerStatusCell cellHeight])];
-        _lblS.backgroundColor = [UIColor clearColor];
-        _lblS.font = [UIFont systemFontOfSize:14];
-        _lblS.textAlignment = UITextAlignmentRight;
-        [self.contentView addSubview:_lblS];
-        self.lblStatus = _lblS;
-        [_lblS release];
+//        UILabel *_lblS = [[UILabel alloc] initWithFrame:CGRectMake(150, 0, 135, [D3ServerStatusCell cellHeight])];
+//        _lblS.backgroundColor = [UIColor clearColor];
+//        _lblS.font = [UIFont systemFontOfSize:14];
+//        _lblS.textAlignment = UITextAlignmentRight;
+//        [self.contentView addSubview:_lblS];
+//        self.lblStatus = _lblS;
+//        [_lblS release];
+        
+        UIImageView *_flag = [[UIImageView alloc] initWithFrame:CGRectMake(260.0, 9.0, 24, 27)];
+        _flag.backgroundColor = [UIColor clearColor];
+        [self.contentView addSubview:_flag];
+        self.flagStatus = _flag;
+        [_flag release];
     }
     return self;
 }

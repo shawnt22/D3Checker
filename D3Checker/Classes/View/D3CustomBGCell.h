@@ -57,3 +57,11 @@ typedef enum {
 + (TCustomBGCellStyle)plainStyleWithIndex:(NSInteger)index Count:(NSInteger)count;  //  table style 为 UITableViewStylePlain
 
 @end
+
+
+#pragma mark - D3CustomBGCell
+@interface D3CustomBGCell : TCustomBGCell
+
+- (void)refreshD3CustomBGViewWithIndexPath:(NSIndexPath *)indexPath;
+
+@end

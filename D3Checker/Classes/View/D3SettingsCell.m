@@ -7,6 +7,7 @@
 //
 
 #import "D3SettingsCell.h"
+#import "Util.h"
 
 @implementation D3SettingsCell
 @synthesize lblTitle, lblSubtitle;
@@ -32,6 +33,7 @@
         
         UILabel *_ls = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, 170, [D3SettingsCell cellHeight])];
         _ls.backgroundColor = [UIColor clearColor];
+        _ls.textColor = SRGBCOLOR(112, 71, 38);
         _ls.font = [UIFont systemFontOfSize:14];
         _ls.textAlignment = UITextAlignmentRight;
         [self.contentView addSubview:_ls];
@@ -54,6 +56,7 @@
     if (self) {
         UILabel *_lt = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 200, [D3SettingsCell cellHeight])];
         _lt.backgroundColor = [UIColor clearColor];
+        _lt.textColor = SRGBCOLOR(64, 57, 47);
         _lt.font = [UIFont systemFontOfSize:16];
         _lt.textAlignment = UITextAlignmentLeft;
         [self.contentView addSubview:_lt];

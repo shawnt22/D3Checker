@@ -60,6 +60,7 @@
     cell.lblTitle.text = nil;
     cell.accessoryType = UITableViewCellAccessoryNone;
     
+    [cell refreshD3CustomBGViewWithIndexPath:indexPath];
     cell.customBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:D3SupportLanguageCount];
     cell.customSelectedBackgroundView.bgStyle = [TCustomCellBGView groupStyleWithIndex:indexPath.row Count:D3SupportLanguageCount];
     

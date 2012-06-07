@@ -130,6 +130,7 @@
     }
     cell.lblTitle.text = nil;
     cell.lblSubtitle.text = nil;
+    [cell refreshD3CustomBGViewWithIndexPath:indexPath];
     
     switch (indexPath.section) {
         case 0:
