@@ -25,7 +25,7 @@
 //        [_lt release];
         self.lblTitle = nil;
         
-        UIImageView *_icon = [[UIImageView alloc] initWithFrame:CGRectMake(5, ceilf(([D3SettingsCell cellHeight] - 32)/2), 32, 32)];
+        UIImageView *_icon = [[UIImageView alloc] initWithFrame:CGRectMake(12, ceilf(([D3SettingsCell cellHeight] - 25)/2), 32, 25)];
         _icon.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:_icon];
         self.iconImage = _icon;
