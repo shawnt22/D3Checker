@@ -43,6 +43,8 @@
 		60F72F991579CDEB008EE97C /* D3TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F72F981579CDEB008EE97C /* D3TableView.m */; };
 		60F961F4157C87D600C96AEB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F961F3157C87D600C96AEB /* Reachability.m */; };
 		60F961F7157C890F00C96AEB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F961F6157C890F00C96AEB /* SystemConfiguration.framework */; };
+		9C004A1B158047F500DBC993 /* bg_status_314x360.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C004A19158047F500DBC993 /* bg_status_314x360.png */; };
+		9C004A1C158047F500DBC993 /* bg_status_flag.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9C004A1A158047F500DBC993 /* bg_status_flag.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +107,8 @@
 		60F961F2157C87D600C96AEB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		60F961F3157C87D600C96AEB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		60F961F6157C890F00C96AEB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9C004A19158047F500DBC993 /* bg_status_314x360.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_status_314x360.png; sourceTree = "<group>"; };
+		9C004A1A158047F500DBC993 /* bg_status_flag.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bg_status_flag.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +271,8 @@
 		6043511E15790D1D00FEC968 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				9C004A19158047F500DBC993 /* bg_status_314x360.png */,
+				9C004A1A158047F500DBC993 /* bg_status_flag.gif */,
 				6025FC1A157E5E5100A07B48 /* icon@2x.png */,
 				6073ECF2157B98CC005C820D /* bg_language.png */,
 				6073ECF3157B98CC005C820D /* bg_mail.png */,
@@ -378,6 +384,8 @@
 				6073ECFA157B98CC005C820D /* btn_back.png in Resources */,
 				6073ECFB157B98CC005C820D /* btn_refresh.png in Resources */,
 				6025FC1B157E5E5100A07B48 /* icon@2x.png in Resources */,
+				9C004A1B158047F500DBC993 /* bg_status_314x360.png in Resources */,
+				9C004A1C158047F500DBC993 /* bg_status_flag.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

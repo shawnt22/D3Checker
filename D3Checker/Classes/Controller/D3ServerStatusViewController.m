@@ -46,8 +46,9 @@
     [_refresh release];
     
     D3TableView *_tb = [[D3TableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-self.navigationController.navigationBar.bounds.size.height-self.tabBarController.tabBar.bounds.size.height) style:UITableViewStyleGrouped];
+    NSLog(@"%@", NSStringFromCGRect(_tb.bounds));
     _tb.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tb.backgroundColor = self.view.backgroundColor;
+    _tb.backgroundColor = [UIColor clearColor];
     _tb.delegate = self;
     _tb.dataSource = self;
     [self.view addSubview:_tb];

@@ -40,6 +40,11 @@
     [super viewDidLoad];
     self.view.backgroundColor = SRGBCOLOR(250, 250, 250);
     
+    UIImageView *_bg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-self.navigationController.navigationBar.bounds.size.height-self.tabBarController.tabBar.bounds.size.height)];
+    _bg.image = [Util imageWithName:@"bg_status_314x360"];
+    [self.view addSubview:_bg];
+    [_bg release];
+    
     CGFloat _ctrWH = 60.0;
     SStatusControl *_sctr = [[SStatusControl alloc] initWithFrame:CGRectMake(ceilf((self.view.bounds.size.width-_ctrWH)/2), ceilf((self.view.bounds.size.height-93-_ctrWH)/2), _ctrWH, _ctrWH)];
     _sctr.hidden = YES;
@@ -55,6 +60,7 @@
 #pragma mark refresh
 - (void)refreshBarItems {
     self.title = [self controllerTitle];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 }
 - (void)responseNotification:(NSNotification *)notification {
     if ([[notification name] isEqualToString:kD3NotificationSupportLanguageChanged]) {
