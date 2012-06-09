@@ -83,6 +83,12 @@
 }
 
 #pragma mark refresh
+- (void)refreshBarItems {
+    [super refreshBarItems];
+    
+    UIImage *_settingsImage = [UIImage imageNamed:@"bg_status.png"];
+    self.navigationController.tabBarItem.image = _settingsImage;
+}
 - (NSString *)controllerTitle {
     return [SUtil titleOfServerStatusViewController];
 }
