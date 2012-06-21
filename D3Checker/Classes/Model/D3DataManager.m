@@ -42,5 +42,8 @@ static D3DataManager *_instance = nil;
         self.settings = _settings;
     }
 }
+- (BOOL)isLogin {
+    return NO;
+}
 
 @end

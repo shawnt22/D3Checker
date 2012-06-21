@@ -297,8 +297,22 @@
 #pragma mark - URLPath
 @implementation SUtil (PathManager)
 
++ (NSString *)pathCacheImgs {
+	return [Util filePathWith:@"common/cache_image" isDirectory:YES];
+}
++ (NSString *)pathCacheDocs {
+	return [Util filePathWith:@"common/cache_document" isDirectory:YES];
+}
 + (NSString *)pathGlobalConfiger {
-    return [Util filePathWith:@"common/document" isDirectory:YES];
+	return [Util filePathWith:@"common/document" isDirectory:YES];
+}
++ (NSString *)pathCUserCacheDocs {
+    return nil;
+//	return [Util filePathWith:[[NSString stringWithFormat:@"%@", [D3DataManager shareInstance].currentUser.ID] stringByAppendingPathComponent:@"cache_document"] isDirectory:YES];
+}
++ (NSString *)pathCUserConfiger {
+    return nil;
+//	return [Util filePathWith:[[NSString stringWithFormat:@"%@", [SDataManager shareInstance].currentUser.ID] stringByAppendingPathComponent:@"document"] isDirectory:YES];
 }
 
 @end

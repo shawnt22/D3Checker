@@ -65,7 +65,11 @@ typedef enum {
 #pragma mark - Path
 @interface SUtil (PathManager)
 
++ (NSString *)pathCacheImgs;
++ (NSString *)pathCacheDocs;
 + (NSString *)pathGlobalConfiger;
++ (NSString *)pathCUserCacheDocs;
++ (NSString *)pathCUserConfiger;
 
 @end
 

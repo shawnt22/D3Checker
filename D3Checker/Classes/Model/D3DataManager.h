@@ -16,5 +16,6 @@
 
 + (D3DataManager *)shareInstance;
 - (void)prepareData;
+- (BOOL)isLogin;
 
 @end
