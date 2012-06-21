@@ -55,13 +55,6 @@ typedef enum {
 
 @end
 
-#pragma mark - URLPath
-@interface SUtil (URLManager)
-
-+ (NSString *)checkD3ServerStatus;
-
-@end
-
 #pragma mark - Path
 @interface SUtil (PathManager)
 

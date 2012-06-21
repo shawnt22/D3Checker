@@ -20,6 +20,6 @@ typedef enum {
 
 @interface SURLDefine : NSObject
 
-
++ (NSString *)checkD3ServerStatus;
 
 @end

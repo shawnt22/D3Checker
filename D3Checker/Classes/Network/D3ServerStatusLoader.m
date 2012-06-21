@@ -8,6 +8,7 @@
 
 #import "D3ServerStatusLoader.h"
 #import "Reachability.h"
+#import "SURLDefine.h"
 
 @interface D3Loader()
 @property (nonatomic, retain) Reachability *reachability;
@@ -112,7 +113,7 @@
     [self.operationQueue addOperation:self.statusOperation];
 }
 - (void)performOperation:(NSInvocationOperation *)operation {
-    NSData *_data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[SUtil checkD3ServerStatus]]];
+    NSData *_data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[SURLDefine checkD3ServerStatus]]];
     NSString *_string = [[NSString alloc] initWithData:_data encoding:NSUTF8StringEncoding];
     NSError *_error = [self parserResponse:_string withD3Loader:self];
     if (_error) {
