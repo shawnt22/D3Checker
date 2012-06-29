@@ -63,6 +63,15 @@
     [_bgFooter addSubview:_cpright];
     [_cpright release];
     
+    UILabel *_version = [[UILabel alloc] initWithFrame:CGRectMake(_cpright.frame.origin.x, _cpright.frame.origin.y-_cpright.frame.size.height, _cpright.frame.size.width, _cpright.frame.size.height)];
+    _version.backgroundColor = _cpright.backgroundColor;
+    _version.textColor = _cpright.textColor;
+    _version.font = _cpright.font;
+    _version.textAlignment = _cpright.textAlignment;
+    _version.text = [NSString stringWithFormat:@"Version %@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+    [_bgFooter addSubview:_version];
+    [_version release];
+    
     self.theTableView.tableFooterView = _bgFooter;
     [_bgFooter release];
 }

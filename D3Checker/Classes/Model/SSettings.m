@@ -26,7 +26,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _language = D3SupportLanguageTW_ZH;
+        _language = D3SupportLanguageUS_EN;
     }
     return self;
 }
