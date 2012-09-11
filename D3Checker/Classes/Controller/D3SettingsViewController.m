@@ -59,11 +59,12 @@
     _cpright.textColor = SRGBCOLOR(123, 123, 123);
     _cpright.textAlignment = UITextAlignmentCenter;
     _cpright.font = [UIFont systemFontOfSize:12];
-    _cpright.text = @"Copyright shawnt22@gmail.com. All rights reserved.";
+//    _cpright.text = @"Copyright shawnt22@gmail.com. All rights reserved.";
     [_bgFooter addSubview:_cpright];
     [_cpright release];
     
     UILabel *_version = [[UILabel alloc] initWithFrame:CGRectMake(_cpright.frame.origin.x, _cpright.frame.origin.y-_cpright.frame.size.height, _cpright.frame.size.width, _cpright.frame.size.height)];
+    _version.frame = _cpright.frame;
     _version.backgroundColor = _cpright.backgroundColor;
     _version.textColor = _cpright.textColor;
     _version.font = _cpright.font;
